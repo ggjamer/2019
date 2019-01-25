@@ -6,7 +6,7 @@ public class CameraMovement : MonoBehaviour
 {
 
 	private Camera _camera;
-	private Vector3 playerPosition = new Vector3(0, 0, 0);
+	private Vector3 _playerPosition;
 
     // Start is called before the first frame update
     void Start()
@@ -19,15 +19,6 @@ public class CameraMovement : MonoBehaviour
     {
 
 
-
-
-		if(Input.GetKey(KeyCode.D))
-		{
-			playerPosition = new Vector3(playerPosition.x + 5 * Time.deltaTime, playerPosition.y, playerPosition.z);
-			//Debug.Log(playerPosition);
-		}
-
-		_camera.transform.position = Vector3.Lerp(playerPosition, _camera.transform.position, 1);
-		Debug.Log(Vector3.Lerp(playerPosition, _camera.transform.position, 1));
+		
 	}
 }
