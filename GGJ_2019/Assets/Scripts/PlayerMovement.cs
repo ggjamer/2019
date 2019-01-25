@@ -5,7 +5,8 @@ using UnityEngine.Animations;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed = 20;
+    public float speedY = 20;
+    public float speedX = 6;
 
 
     // Start is called before the first frame update
@@ -18,8 +19,8 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         transform.position += new Vector3(
-            Time.deltaTime * speed * Input.GetAxis("Horizontal"),
-            Time.deltaTime * speed * Input.GetAxis("Vertical"),
+            Time.deltaTime * speedX * Input.GetAxis("Horizontal"),
+            Time.deltaTime * speedY * Input.GetAxis("Vertical"),
             0);
 
     }
