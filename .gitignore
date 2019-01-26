@@ -47,14 +47,13 @@ sysinfo.txt
 # Sensitive or high-churn files
 **/.idea
 
-*.suo
-*.user
-.vs/
 [Bb]in/
-[Oo]bj/
 _UpgradeReport_Files/
 [Pp]ackages/
 
 Thumbs.db
 Desktop.ini
 .DS_Store
+/GGJ_2019/Assets/Plugins/Editor/JetBrains/JetBrains.Rider.Unity.Editor.Plugin.Repacked.dll
+/GGJ_2019/Assets/Plugins/Editor/JetBrains/JetBrains.Rider.Unity.Editor.Plugin.Repacked.dll.meta
+/GGJ_2019/Assets/Plugins/Editor/JetBrains.meta

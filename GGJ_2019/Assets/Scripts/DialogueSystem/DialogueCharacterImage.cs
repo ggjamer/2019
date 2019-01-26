@@ -1,0 +1,27 @@
+using DG.Tweening;
+using UnityEngine;
+using UnityEngine.UI;
+
+[RequireComponent(typeof(Image))]
+public class DialogueCharacterImage : MonoBehaviour
+{
+    public bool OpensTotTheLeft;
+    
+    private Image _image;
+
+    private bool _characterShown;
+
+    void Awake()
+    {
+        _image = GetComponent<Image>();
+    }
+
+    public void ToggleCharacter(float duration = 1, Sprite characterImage = null)
+    {
+        if (characterImage != null) _image.sprite = characterImage;
+
+        _image.rectTransform.DOAnchorPosX(_image.rectTransform.anchoredPosition.x + (_characterShown ^ OpensTotTheLeft ? -1 : 1) * _image.rectTransform.rect.width, duration);
+        
+        _characterShown = !_characterShown;
+    }
+}
