@@ -6,6 +6,24 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/samplescene.unity
     guid: d1c3109bdb54ad54c8a2b2838528e640
+  - enabled: 1
+    path: Assets/Scenes/verlust_robert.unity
+    guid: ba407569562d7b2f49faae3f013fe885
+  - enabled: 1
+    path: Assets/Scenes/Pub.unity
+    guid: 51da7885d5ca6bc4180fe6f546fff05b
+  - enabled: 1
+    path: Assets/Scenes/Hotel.unity
+    guid: 78494070bd6a2a5458a3a9d7d7505440
+  - enabled: 1
+    path: Assets/Scenes/Church.unity
+    guid: 5bff0440ba32bc543a37011ef53a5643
+  - enabled: 1
+    path: Assets/Scenes/Store.unity
+    guid: b546ee6d432dbf54eb19d2d2846a4a3b
+  - enabled: 1
+    path: Assets/Scenes/Town Hall.unity
+    guid: 937f5886c77199940b724f88e26f0c5d
   m_configObjects: {}
