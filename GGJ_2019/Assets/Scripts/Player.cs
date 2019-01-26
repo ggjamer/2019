@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour, Actor {
+public class Player : MonoBehaviour{
     private string _name;
     private Sprite _sprite;
     private PlayerMovement _movement;
@@ -16,5 +16,11 @@ public class Player : MonoBehaviour, Actor {
         SpriteRenderer sr = this.gameObject.GetComponent<SpriteRenderer>();
         sr.sprite = _sprite;
         _movement = this.gameObject.GetComponent<PlayerMovement>();
+    }
+
+    public void Interact(Interactible obj) {
+        if (obj.IsInteractible()) {
+            obj.Dialogue();
+        }
     }
 }

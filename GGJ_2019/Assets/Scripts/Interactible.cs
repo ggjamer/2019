@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface Actor {
-
+public interface Interactible {
+   
     void Init();
+    bool IsInteractible();
+
+    void Dialogue();
 }
