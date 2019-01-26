@@ -17,7 +17,7 @@ MonoBehaviour:
   inventory: []
   initialLocation: 1
   MAYOR: 1
-  BOATMAN: 0
+  BOATMAN: 5
   DADDY: 4
   POLICEMAN: 5
   BARKEEPER: 4

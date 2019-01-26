@@ -28,14 +28,6 @@ public class GameLogic : MonoBehaviour {
     public Vector3 PlayerPosition;
     
     //NPC Infos
-    public GameObject mayor;
-    public GameObject boatman;
-    public GameObject policeman;
-    public GameObject daddy;
-    public GameObject barkeeper;
-    public GameObject innkeeper;
-    public GameObject storekeeper;
-    public GameObject priest;
     private List<GameObject> activeNPCs = new List<GameObject>();
     
     // Game State infos
@@ -137,35 +129,35 @@ public class GameLogic : MonoBehaviour {
         GameObject npc;
         switch (npcType) {
             case ActorTypes.DADDY: {
-                npc = Location == Locations.OUTSIDE ? GameObject.Find("Daddy") : Instantiate(daddy);
+                npc = GameObject.Find("Daddy");
                 break;
             }
             case ActorTypes.BOATMAN: {
-                npc = Location == Locations.OUTSIDE ? GameObject.Find("Boatman") : Instantiate(boatman);
+                npc = GameObject.Find("Boatman");
                 break;
             }
             case ActorTypes.MAYOR: {
-                npc = Location == Locations.OUTSIDE ? GameObject.Find("Mayor") : Instantiate(mayor);
+                npc = GameObject.Find("Mayor");
                 break;
             }
             case ActorTypes.POLICEMAN: {
-                npc = Location == Locations.OUTSIDE ? GameObject.Find("Policeman") : Instantiate(policeman);
+                npc = GameObject.Find("Policeman");
                 break;
             }
             case ActorTypes.BARKEEPER: {
-                npc = Location == Locations.OUTSIDE ? GameObject.Find("Barkeeper") : Instantiate(barkeeper);
+                npc = GameObject.Find("Barkeeper");
                 break;
             }
             case ActorTypes.INNKEEPER: {
-                npc = Location == Locations.OUTSIDE ? GameObject.Find("Innkeeper") : Instantiate(innkeeper);
+                npc = GameObject.Find("Innkeeper");
                 break;
             }
             case ActorTypes.STOREKEEPER: {
-                npc = Location == Locations.OUTSIDE ? GameObject.Find("Storekeeper") : Instantiate(storekeeper);
+                npc = GameObject.Find("Storekeeper");
                 break;
             }
             case ActorTypes.PRIEST: {
-                npc = Location == Locations.OUTSIDE ? GameObject.Find("Priest") : Instantiate(priest);
+                npc = GameObject.Find("Priest");
                 break;
             }
             default: {
