@@ -14,8 +14,11 @@ public class CharacterCreation : MonoBehaviour {
     private Text _genderInput;
     public Sprite maleSprite;
     public Sprite femaleSprite;
+    public RuntimeAnimatorController maleAnimatorController;
+    public RuntimeAnimatorController femaleAnmiController;
 
     public Image preview;
+    private RuntimeAnimatorController animatorController;
 
     void Start() {
         _nameInput = nameInputObj.GetComponent<Text>();
@@ -28,8 +31,10 @@ public class CharacterCreation : MonoBehaviour {
     {
         if (_genderInput.text == "female") {
             preview.sprite = femaleSprite;
+            animatorController = femaleAnmiController;
         } else if (_genderInput.text == "male") {
             preview.sprite = maleSprite;
+            animatorController = maleAnimatorController;
         }
         else {
             preview.sprite = null;
@@ -42,7 +47,7 @@ public class CharacterCreation : MonoBehaviour {
             DontDestroyOnLoad(logicObj);
             GameLogic logic = logicObj.GetComponent<GameLogic>();
             logic.playerName = _nameInput.text;
-            logic.playerSprite = preview.sprite;
+            logic.animatorController = animatorController;
         
             SceneManager.LoadScene(logic.initScene);
         }
