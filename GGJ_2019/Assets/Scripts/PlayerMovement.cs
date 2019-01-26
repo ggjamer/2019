@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
 	private LoadHouse _houseInRange;
 
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
 		gameObject.transform.position = GameLogic.Instance.PlayerPosition;
     }
