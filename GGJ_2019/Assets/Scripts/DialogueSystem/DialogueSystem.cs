@@ -29,7 +29,7 @@ public class DialogueSystem : MonoBehaviour
         if (_dialogue == null) return;
 
 
-        if (!Input.GetButtonDown("Action")) return;
+        if (!Input.GetButtonDown("Fire1")) return;
         if (_currentLine == -1)
         {
             Debug.Log("ending dialogue");
@@ -52,14 +52,15 @@ public class DialogueSystem : MonoBehaviour
         }
     }
 
-    public void StartDialogue(string characterA, string characterB, string[] dialogue)
-    {
+    //public void StartDialogue(string characterA, string characterB, string[] dialogue)
+    public void StartDialogue(DialogueObject diag)
+	{
         Debug.Log("Starting dialogue");
-        _dialogue = dialogue;
-        _characterAName = characterA;
-        _characterBName = characterB;
-        LeftCharacterImage.ToggleCharacter(OpeningAnimationDuration, GetPortraitForCharacter(characterA));
-        RightCharacterImage.ToggleCharacter(OpeningAnimationDuration, GetPortraitForCharacter(characterB));
+        _dialogue = diag.diaglogue;
+        _characterAName = diag.PersonA;
+        _characterBName = diag.PersonB;
+        LeftCharacterImage.ToggleCharacter(OpeningAnimationDuration, GetPortraitForCharacter(diag.PersonA));
+        RightCharacterImage.ToggleCharacter(OpeningAnimationDuration, GetPortraitForCharacter(diag.PersonB));
 
         TextCanvas.DOFade(1, OpeningAnimationDuration);
 
