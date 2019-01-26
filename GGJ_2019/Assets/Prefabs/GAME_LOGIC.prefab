@@ -49,7 +49,7 @@ MonoBehaviour:
   playerName: 
   animatorController: {fileID: 0}
   PlayerPosition: {x: 0, y: 0, z: 0}
-  mayor: {fileID: 4225308608402916093, guid: 6b27d8d96f798d344b5ab0c1e470aa4f, type: 3}
+  mayor: {fileID: 1833109822685198306, guid: b87608a2bf98f5f4685b999fc9c52e0a, type: 3}
   boatman: {fileID: 4225308608402916093, guid: 6b27d8d96f798d344b5ab0c1e470aa4f, type: 3}
   policeman: {fileID: 5780205544746360640, guid: ddc877a16c89348a4b7314d60ccc2d7c,
     type: 3}
