@@ -43,12 +43,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a90852d6454e82ead943e679d8ec7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerObj: {fileID: 8333931549320749573, guid: 3a6f0e62f2ee36149b4f014bc018517c,
-    type: 3}
   logicObj: {fileID: 8317295099922660785, guid: 53b0e3334380514e7b72dec310c2ed95,
     type: 3}
   nameInputObj: {fileID: 0}
   genderInputObj: {fileID: 0}
-  maleSprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  maleSprite: {fileID: 21300000, guid: 7d7be2fbe7cf36327b055532db21ef33, type: 3}
   femaleSprite: {fileID: 21300000, guid: 49b7389d83be99da4979c1176b661823, type: 3}
   preview: {fileID: 0}
