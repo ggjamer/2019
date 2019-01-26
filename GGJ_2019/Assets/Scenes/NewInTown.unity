@@ -576,6 +576,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: c23fa2330e2cf77e4bb91a9b5ceb844e,
         type: 3}
+    - target: {fileID: 7096235393405151316, guid: 69b5124accb2e8a46a0b691273f97790,
+        type: 3}
+      propertyPath: SceneName
+      value: PoliceStation
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69b5124accb2e8a46a0b691273f97790, type: 3}
 --- !u!1001 &2563013852162940827
