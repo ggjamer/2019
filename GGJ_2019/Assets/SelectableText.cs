@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace DefaultNamespace
@@ -7,5 +8,6 @@ namespace DefaultNamespace
         public int id;
         public string text;
         public GameObject gameObject;
+        public Delegate callback;
     }
 }

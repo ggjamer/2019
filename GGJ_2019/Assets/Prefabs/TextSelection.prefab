@@ -51,9 +51,7 @@ MonoBehaviour:
   selectedElement: 0
   unfocussedColor: {r: 0.06666667, g: 0.21568628, b: 0.58431375, a: 1}
   focussedColor: {r: 1, g: 0.75, b: 0, a: 1}
-  defaultTexts:
-  - Fortfahren
-  - Beenden
-  offset: 50
+  defaultTexts: []
+  offset: 100
   TextPrefab: {fileID: 4420172379901481833, guid: af67c59ed9f68a9d2bbef52b5ae92b5a,
     type: 3}

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using DefaultNamespace;
 using DG.Tweening;
@@ -22,38 +23,54 @@ public class MenuInteraction : MonoBehaviour
     void Start()
     {
         
-        Debug.Log((-1) % 5);
         foreach (var text in defaultTexts)
         {
             AddText(0, text);
         }
         
-        ColorSelected();
-        SelectNextText(); 
+        ColorSelected(); 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown("up")){
+        if(Input.GetKeyDown("down")){
             SelectNextText(); 
             ColorSelected();
         }
-        if(Input.GetKeyDown("down")){
+        if(Input.GetKeyDown("up")){
             SelectPrevText(); 
             ColorSelected();
         }
+        if(Input.GetButton("Jump"))
+        {
+            RunCurrentSelection();
+        }
     }
 
-    void AddText(int id, string text)
+    private void RunCurrentSelection()
+    {
+        if (selectableTexts.Count > selectedElement)
+        {
+            selectableTexts[selectedElement].callback.DynamicInvoke();
+        }
+    }
+
+    public void AddText(int id, string text)
+    {
+        AddText(id, text, delegate() { });
+    }
+
+    public void AddText(int id, string text, Action callback)
     {
         
-        GameObject gameObject = Instantiate(TextPrefab);
-        gameObject.transform.parent = transform;
+        GameObject gameObject = Instantiate(TextPrefab,transform);
         gameObject.transform.localPosition = new Vector3(0, 0 - offset * selectableTexts.Count, 1);
+        gameObject.GetComponent<Text>().text = text;
         SelectableText selectableText = new SelectableText();
         selectableText.id = id;
         selectableText.text = text;
+        selectableText.callback = callback;
         selectableText.gameObject = gameObject;
 
         this.selectableTexts.Add(selectableText);   
