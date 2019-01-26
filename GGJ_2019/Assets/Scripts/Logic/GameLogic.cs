@@ -23,7 +23,7 @@ public class GameLogic : MonoBehaviour {
     public GameObject playerObj;
     private GameObject player;
     public string playerName;
-    public Sprite playerSprite;
+    public RuntimeAnimatorController animatorController;
     private Player _playerBehaviour;
     public Vector3 PlayerPosition;
     
@@ -43,7 +43,7 @@ public class GameLogic : MonoBehaviour {
     void init(Scene scene, LoadSceneMode mode) {
         player = Instantiate(playerObj);
         _playerBehaviour = player.GetComponent<Player>();
-        _playerBehaviour.SetParams(playerName, playerSprite);
+        _playerBehaviour.SetParams(playerName, animatorController);
         _playerBehaviour.Init();
     }
     

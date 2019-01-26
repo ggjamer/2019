@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour{
     private string _name;
-    private Sprite _sprite;
+    private RuntimeAnimatorController _animatorController;
    
     public float speedX = 20;
     public float speedY = 6;
@@ -14,13 +14,13 @@ public class Player : MonoBehaviour{
     private LoadHouse _houseInRange;
 
     
-    public void SetParams(string name, Sprite sprite) {
+    public void SetParams(string name, RuntimeAnimatorController _animatorController) {
         _name = name;
-        _sprite = sprite;
+        this._animatorController = _animatorController;
     }
     public void Init() {
-        SpriteRenderer sr = this.gameObject.GetComponent<SpriteRenderer>();
-        sr.sprite = _sprite;
+        Animator anim = this.gameObject.GetComponent<Animator>();
+        anim.runtimeAnimatorController = _animatorController;
     }
  
     // Start is called before the first frame update
