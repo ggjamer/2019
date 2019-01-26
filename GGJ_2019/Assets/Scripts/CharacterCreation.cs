@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class CharacterCreation : MonoBehaviour {
@@ -41,6 +42,7 @@ public class CharacterCreation : MonoBehaviour {
             GameLogic logic = logicObj.AddComponent<GameLogic>();
             logic.Init(_nameInput.text, preview.sprite);
             // Load village afterwards
+            SceneManager.LoadScene("tranquil_test.unity");
         }
     }
 }

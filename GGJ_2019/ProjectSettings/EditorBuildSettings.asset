@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Town Hall.unity
     guid: 937f5886c77199940b724f88e26f0c5d
+  - enabled: 1
+    path: Assets/Scenes/CharacterCreation.unity
+    guid: 62e05ccce03b8345eb87623ea0ef250e
   m_configObjects: {}
