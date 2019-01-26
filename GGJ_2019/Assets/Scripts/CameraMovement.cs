@@ -12,6 +12,7 @@ public class CameraMovement : MonoBehaviour
 	private Camera _camera;
 	private Transform _playerTransform;
 	private Vector2 _velocity;
+	private float _zommVelocity;
 
 	public float HouseCameraSize = 10;
 	public float HouseZoomDistance = 10;
@@ -88,9 +89,14 @@ public class CameraMovement : MonoBehaviour
 		{
 			if (Vector2.Distance(_housePositions[i], _playerTransform.position) < HouseZoomDistance)
 			{
+				
 				float distance = Vector2.Distance(_playerTransform.position, _housePositions[i]);
-				distance = distance / HouseZoomDistance;
+				distance = (distance / HouseZoomDistance);
 				_camera.orthographicSize = Mathf.Lerp(HouseCameraSize, _defaultCameraSize, distance);
+				
+
+				//_zommVelocity *= Time.smoothDeltaTime;
+				//_camera.orthographicSize = Mathf.SmoothDamp(HouseCameraSize, _defaultCameraSize, ref _zommVelocity, 0.25f);
 			}
 		}
 	}
