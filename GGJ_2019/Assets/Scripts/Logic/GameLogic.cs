@@ -137,35 +137,35 @@ public class GameLogic : MonoBehaviour {
         GameObject npc;
         switch (npcType) {
             case ActorTypes.DADDY: {
-                npc = Instantiate(daddy);
+                npc = Location == Locations.OUTSIDE ? GameObject.Find("Daddy") : Instantiate(daddy);
                 break;
             }
             case ActorTypes.BOATMAN: {
-                npc = Instantiate(boatman);
+                npc = Location == Locations.OUTSIDE ? GameObject.Find("Boatman") : Instantiate(boatman);
                 break;
             }
             case ActorTypes.MAYOR: {
-                npc = Instantiate(mayor);
+                npc = Location == Locations.OUTSIDE ? GameObject.Find("Mayor") : Instantiate(mayor);
                 break;
             }
             case ActorTypes.POLICEMAN: {
-                npc = Instantiate(policeman);
+                npc = Location == Locations.OUTSIDE ? GameObject.Find("Policeman") : Instantiate(policeman);
                 break;
             }
             case ActorTypes.BARKEEPER: {
-                npc = Instantiate(barkeeper);
+                npc = Location == Locations.OUTSIDE ? GameObject.Find("Barkeeper") : Instantiate(barkeeper);
                 break;
             }
             case ActorTypes.INNKEEPER: {
-                npc = Instantiate(innkeeper);
+                npc = Location == Locations.OUTSIDE ? GameObject.Find("Innkeeper") : Instantiate(innkeeper);
                 break;
             }
             case ActorTypes.STOREKEEPER: {
-                npc = Instantiate(storekeeper);
+                npc = Location == Locations.OUTSIDE ? GameObject.Find("Storekeeper") : Instantiate(storekeeper);
                 break;
             }
             case ActorTypes.PRIEST: {
-                npc = Instantiate(priest);
+                npc = Location == Locations.OUTSIDE ? GameObject.Find("Priest") : Instantiate(priest);
                 break;
             }
             default: {
@@ -173,11 +173,6 @@ public class GameLogic : MonoBehaviour {
             }
         }
 
-        NPC npcBehaviour = npc.AddComponent<NPC>();
-        npcBehaviour.actorType = npcType;
-        if (Location == Locations.OUTSIDE) {
-            npc.transform.position = npcBehaviour.OutdoorPosition;
-        }
         activeNPCs.Add(npc);
     }
 
