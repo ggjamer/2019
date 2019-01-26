@@ -49,4 +49,8 @@ MonoBehaviour:
   genderInputObj: {fileID: 0}
   maleSprite: {fileID: 21300000, guid: 7d7be2fbe7cf36327b055532db21ef33, type: 3}
   femaleSprite: {fileID: 21300000, guid: 49b7389d83be99da4979c1176b661823, type: 3}
+  maleAnimatorController: {fileID: 9100000, guid: ec2e06a87e171c1b5bc9c0899e7883da,
+    type: 2}
+  femaleAnmiController: {fileID: 9100000, guid: ec2e06a87e171c1b5bc9c0899e7883da,
+    type: 2}
   preview: {fileID: 0}
