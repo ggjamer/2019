@@ -2415,31 +2415,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CharacterCreation
       objectReference: {fileID: 0}
-    - target: {fileID: 1493585714848782112, guid: 04f224b5c3a75a9ac8472a8993b41726,
-        type: 3}
-      propertyPath: nameInputObj
-      value: 
-      objectReference: {fileID: 70922799}
-    - target: {fileID: 1493585714848782112, guid: 04f224b5c3a75a9ac8472a8993b41726,
-        type: 3}
-      propertyPath: genderInputObj
-      value: 
-      objectReference: {fileID: 1218163316}
-    - target: {fileID: 1493585714848782112, guid: 04f224b5c3a75a9ac8472a8993b41726,
-        type: 3}
-      propertyPath: preview
-      value: 
-      objectReference: {fileID: 1053229942}
-    - target: {fileID: 1493585714848782112, guid: 04f224b5c3a75a9ac8472a8993b41726,
-        type: 3}
-      propertyPath: maleAnimatorController
-      value: 
-      objectReference: {fileID: 9100000, guid: ec2e06a87e171c1b5bc9c0899e7883da, type: 2}
-    - target: {fileID: 1493585714848782112, guid: 04f224b5c3a75a9ac8472a8993b41726,
-        type: 3}
-      propertyPath: femaleAnmiController
-      value: 
-      objectReference: {fileID: 9100000, guid: ec2e06a87e171c1b5bc9c0899e7883da, type: 2}
     - target: {fileID: 1493585714848782113, guid: 04f224b5c3a75a9ac8472a8993b41726,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2495,5 +2470,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1493585714848782112, guid: 04f224b5c3a75a9ac8472a8993b41726,
+        type: 3}
+      propertyPath: nameInputObj
+      value: 
+      objectReference: {fileID: 70922799}
+    - target: {fileID: 1493585714848782112, guid: 04f224b5c3a75a9ac8472a8993b41726,
+        type: 3}
+      propertyPath: genderInputObj
+      value: 
+      objectReference: {fileID: 1218163316}
+    - target: {fileID: 1493585714848782112, guid: 04f224b5c3a75a9ac8472a8993b41726,
+        type: 3}
+      propertyPath: preview
+      value: 
+      objectReference: {fileID: 1053229942}
+    - target: {fileID: 1493585714848782112, guid: 04f224b5c3a75a9ac8472a8993b41726,
+        type: 3}
+      propertyPath: maleAnimatorController
+      value: 
+      objectReference: {fileID: 9100000, guid: ec2e06a87e171c1b5bc9c0899e7883da, type: 2}
+    - target: {fileID: 1493585714848782112, guid: 04f224b5c3a75a9ac8472a8993b41726,
+        type: 3}
+      propertyPath: femaleAnmiController
+      value: 
+      objectReference: {fileID: 9100000, guid: ec2e06a87e171c1b5bc9c0899e7883da, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04f224b5c3a75a9ac8472a8993b41726, type: 3}

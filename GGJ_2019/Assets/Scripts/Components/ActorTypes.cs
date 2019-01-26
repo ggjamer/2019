@@ -1,5 +1,6 @@
 
 public enum ActorTypes {
+    NONE,
     FLOUR,
     PEN,
     PAPER,

@@ -204,6 +204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e94f53b6edc3e4fa89f160fd6226eb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  indoorLocation: {x: -20, y: 0, z: 20}
   speedX: 20
   speedY: 6
 --- !u!95 &92888043

@@ -6,6 +6,7 @@ using UnityEngine;
 public class Player : MonoBehaviour{
     private string _name;
     private RuntimeAnimatorController _animatorController;
+    public Vector3 indoorLocation;
    
     public float speedX = 20;
     public float speedY = 6;
@@ -21,6 +22,9 @@ public class Player : MonoBehaviour{
     public void Init() {
         Animator anim = this.gameObject.GetComponent<Animator>();
         anim.runtimeAnimatorController = _animatorController;
+        if (GameLogic.Instance.Location != Locations.OUTSIDE) {
+            this.gameObject.transform.position = indoorLocation;
+        }
     }
  
     // Start is called before the first frame update

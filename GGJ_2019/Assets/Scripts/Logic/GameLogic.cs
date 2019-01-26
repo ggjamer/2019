@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Runtime.ConstrainedExecution;
+using UnityEditor.VersionControl;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,7 +11,6 @@ public class GameLogic : MonoBehaviour {
     // Setup fields
     public string initScene;
 
-    public List<StateInfo> stateInfos;
     // Singleton variables
     private static GameLogic _instance;
     public static GameLogic Instance {
@@ -27,8 +27,21 @@ public class GameLogic : MonoBehaviour {
     private Player _playerBehaviour;
     public Vector3 PlayerPosition;
     
+    //NPC Infos
+    public GameObject mayor;
+    public GameObject boatman;
+    public GameObject policeman;
+    public GameObject daddy;
+    public GameObject barkeeper;
+    public GameObject innkeeper;
+    public GameObject storekeeper;
+    public GameObject priest;
+    private List<GameObject> activeNPCs = new List<GameObject>();
+    
     // Game State infos
     public GameState GameState;
+    public StateInfo[] StateInfos;
+    public Locations Location;
     
     // Camera Infos
     public Vector3 CameraPosition;
@@ -41,10 +54,17 @@ public class GameLogic : MonoBehaviour {
     }
 
     void init(Scene scene, LoadSceneMode mode) {
+        // Create Player
         player = Instantiate(playerObj);
         _playerBehaviour = player.GetComponent<Player>();
         _playerBehaviour.SetParams(playerName, animatorController);
         _playerBehaviour.Init();
+        
+        //Create NPCs
+        List<ActorTypes> npcs = GetPeopleAtLocation(Location);
+        foreach (ActorTypes npc in npcs) {
+            CreateNPC(npc);
+        }
     }
     
     // Update is called once per frame
@@ -111,5 +131,87 @@ public class GameLogic : MonoBehaviour {
 
     private void finale() {
         
+    }
+
+    private void CreateNPC(ActorTypes npcType) {
+        GameObject npc;
+        switch (npcType) {
+            case ActorTypes.DADDY: {
+                npc = Instantiate(daddy);
+                break;
+            }
+            case ActorTypes.BOATMAN: {
+                npc = Instantiate(boatman);
+                break;
+            }
+            case ActorTypes.MAYOR: {
+                npc = Instantiate(mayor);
+                break;
+            }
+            case ActorTypes.POLICEMAN: {
+                npc = Instantiate(policeman);
+                break;
+            }
+            case ActorTypes.BARKEEPER: {
+                npc = Instantiate(barkeeper);
+                break;
+            }
+            case ActorTypes.INNKEEPER: {
+                npc = Instantiate(innkeeper);
+                break;
+            }
+            case ActorTypes.STOREKEEPER: {
+                npc = Instantiate(storekeeper);
+                break;
+            }
+            case ActorTypes.PRIEST: {
+                npc = Instantiate(priest);
+                break;
+            }
+            default: {
+                throw new InvalidExpressionException("Invalid NPC Type");
+            }
+        }
+
+        NPC npcBehaviour = npc.AddComponent<NPC>();
+        npcBehaviour.actorType = npcType;
+        if (Location == Locations.OUTSIDE) {
+            npc.transform.position = npcBehaviour.OutdoorPosition;
+        }
+        activeNPCs.Add(npc);
+    }
+
+    public List<ActorTypes> GetPeopleAtLocation(Locations location) {
+        List<ActorTypes> results = new List<ActorTypes>();
+        StateInfo stateInfo = StateInfos[(int) GameState];
+        
+        Debug.Log(stateInfo);
+        Debug.Log(location);
+        // This is so ugly :(
+        if (stateInfo.DADDY == location) {
+            results.Add(ActorTypes.DADDY);
+        }
+        if (stateInfo.BOATMAN == location) {
+            results.Add(ActorTypes.BOATMAN);
+        }
+        if (stateInfo.MAYOR == location) {
+            results.Add(ActorTypes.MAYOR);
+        }
+        if (stateInfo.POLICEMAN == location) {
+            results.Add(ActorTypes.POLICEMAN);
+        }
+        if (stateInfo.BARKEEPER == location) {
+            results.Add(ActorTypes.BARKEEPER);
+        }
+        if (stateInfo.INNKEEPER == location) {
+            results.Add(ActorTypes.INNKEEPER);
+        }
+        if (stateInfo.STOREKEEPER == location) {
+            results.Add(ActorTypes.STOREKEEPER);
+        }
+        if (stateInfo.PRIEST == location) {
+            results.Add(ActorTypes.PRIEST);
+        }
+        return results;
     }
 }
