@@ -28,7 +28,7 @@ public class GameLogic : MonoBehaviour {
     private Player _playerBehaviour;
     public Vector3 PlayerPosition;
     
-    //NPC Prefabs
+    //NPC Infos
     public GameObject mayor;
     public GameObject boatman;
     public GameObject policeman;
@@ -37,10 +37,12 @@ public class GameLogic : MonoBehaviour {
     public GameObject innkeeper;
     public GameObject storekeeper;
     public GameObject priest;
+    private List<GameObject> activeNPCs;
     
     // Game State infos
     public GameState GameState;
     public StateInfo[] StateInfos;
+    private Locations _location;
     
     // Camera Infos
     public Vector3 CameraPosition;
@@ -53,10 +55,18 @@ public class GameLogic : MonoBehaviour {
     }
 
     void init(Scene scene, LoadSceneMode mode) {
+        // Create Player
         player = Instantiate(playerObj);
         _playerBehaviour = player.GetComponent<Player>();
         _playerBehaviour.SetParams(playerName, playerSprite);
         _playerBehaviour.Init();
+
+        _location = StateInfos[(int) GameState].initialLocation;
+        
+        //Create NPCs
+        foreach (ActorTypes npc in GetPeopleAtLocation(_location)) {
+            CreateNPC(npc);
+        }
     }
     
     // Update is called once per frame
@@ -123,6 +133,54 @@ public class GameLogic : MonoBehaviour {
 
     private void finale() {
         
+    }
+
+    private void CreateNPC(ActorTypes npcType) {
+        GameObject npc;
+        switch (npcType) {
+            case ActorTypes.DADDY: {
+                npc = Instantiate(daddy);
+                break;
+            }
+            case ActorTypes.BOATMAN: {
+                npc = Instantiate(boatman);
+                break;
+            }
+            case ActorTypes.MAYOR: {
+                npc = Instantiate(mayor);
+                break;
+            }
+            case ActorTypes.POLICEMAN: {
+                npc = Instantiate(policeman);
+                break;
+            }
+            case ActorTypes.BARKEEPER: {
+                npc = Instantiate(barkeeper);
+                break;
+            }
+            case ActorTypes.INNKEEPER: {
+                npc = Instantiate(innkeeper);
+                break;
+            }
+            case ActorTypes.STOREKEEPER: {
+                npc = Instantiate(storekeeper);
+                break;
+            }
+            case ActorTypes.PRIEST: {
+                npc = Instantiate(priest);
+                break;
+            }
+            default: {
+                throw new InvalidExpressionException("Invalid NPC Type");
+            }
+        }
+
+        NPC npcBehaviour = npc.AddComponent<NPC>();
+        npcBehaviour.actorType = npcType;
+        if (_location == Locations.OUTSIDE) {
+            npc.transform.position = npcBehaviour.OutdoorPosition;
+        }
+        activeNPCs.Add(npc);
     }
 
     public List<ActorTypes> GetPeopleAtLocation(Locations location) {

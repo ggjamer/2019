@@ -11,7 +11,8 @@ public class StateInfo : ScriptableObject
     
     //Inventory
     public List<Item> inventory;
-    
+
+    public Locations initialLocation;
     //People locations
     public Locations MAYOR;
     public Locations BOATMAN;
