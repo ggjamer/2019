@@ -52,7 +52,6 @@ public class CameraMovement : MonoBehaviour
 	{
 		if (!triggerControlled)
 		{
-			//transformPoint oder inversetransformpoint
 			Vector3 playerInCameraSpace = _camera.transform.InverseTransformPoint(_playerTransform.position);
 			if (playerInCameraSpace.x > DeadZoneX || playerInCameraSpace.x < -DeadZoneX
 				|| playerInCameraSpace.y > DeadZoneY || playerInCameraSpace.y < -DeadZoneY)
@@ -65,12 +64,12 @@ public class CameraMovement : MonoBehaviour
 				FollowPlayer();
 			}
 
-			UpdateCameraSize();
-
 			lastPlayerPosition = _playerTransform.position;
-
-
 		}
+
+
+		UpdateCameraSize();
+
 	}
 
 
@@ -98,25 +97,30 @@ public class CameraMovement : MonoBehaviour
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
-		triggerControlled = true;
-		Debug.Log(collision);
-
-		moveToHouse = LookAtHouse(collision);
-		StartCoroutine(moveToHouse);
-
-		//_camera.transform.position = collision.transform.position;
-		//_camera.transform.position += new Vector3(0, 0, -1);
+		if(collision.tag == "HousePosition")
+		{
+			triggerControlled = true;
+			moveToHouse = LookAtHouse(collision);
+			StartCoroutine(moveToHouse);
+		}
+		if(collision.tag == "Door") //TDOO: an sinnvollen ort verschieben
+		{
+			Debug.Log("door");
+		}
+		//Debug.Log("enterd house zone");
 	}
 
 	private void OnTriggerExit2D(Collider2D collision)
 	{
 		StopCoroutine(moveToHouse);
 		triggerControlled = false;
+		//Debug.Log("exited house zone");
 	}
 
 	IEnumerator LookAtHouse(Collider2D collision)
 	{
-		while( _camera.transform.position != collision.transform.position)
+
+		while(Vector3.Distance(collision.transform.position, _camera.transform.position) > 1.5)
 		{
 			_velocity *= Time.smoothDeltaTime;
 			_camera.transform.position = Vector2.SmoothDamp(_camera.transform.position, collision.transform.position, ref _velocity, 0.25f);
