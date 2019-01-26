@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
-using UnityEngine.Rendering.PostProcessing;
+//using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.UI;
 
 public class DialogueSystem : MonoBehaviour
@@ -29,7 +29,7 @@ public class DialogueSystem : MonoBehaviour
         if (_dialogue == null) return;
 
 
-        if (!Input.GetButtonDown("Action")) return;
+        if (!Input.GetButtonDown("Fire1")) return;
         if (_currentLine == -1)
         {
             Debug.Log("ending dialogue");
@@ -52,9 +52,11 @@ public class DialogueSystem : MonoBehaviour
         }
     }
 
+	/*
     public void StartDialogue(string characterA, string characterB, string[] dialogue)
     {
-        Debug.Log("Starting dialogue");
+
+		Debug.Log("Starting dialogue");
         _dialogue = dialogue;
         _characterAName = characterA;
         _characterBName = characterB;
@@ -66,13 +68,43 @@ public class DialogueSystem : MonoBehaviour
         _currentLine = 0;
         _characterASpeaking = true;
         PlayNextLine();
-    }
+    }*/
 
-    private void PlayNextLine()
+
+	public void StartDialogue(DialogueObject diag)
+	{
+
+		Debug.Log("Starting dialogue");
+		_dialogue = diag.diaglogue;
+		_characterAName = diag.PersonA;
+		_characterBName = diag.PersonB;
+		LeftCharacterImage.ToggleCharacter(OpeningAnimationDuration, GetPortraitForCharacter(diag.PersonA));
+		RightCharacterImage.ToggleCharacter(OpeningAnimationDuration, GetPortraitForCharacter(diag.PersonB));
+
+		TextCanvas.DOFade(1, OpeningAnimationDuration);
+
+		_currentLine = 0;
+		_characterASpeaking = true;
+		PlayNextLine();
+	}
+
+	private void PlayNextLine()
     {
         SpeakerNameText.text = _characterASpeaking ? _characterAName : _characterBName;
 
-        StartCoroutine(PlayText(_dialogue[_currentLine]));
+		/*
+		A: 1
+		A: 2
+
+		B: 3
+
+		A: 4
+		A: 5
+
+		B: 6
+		*/
+
+		StartCoroutine(PlayText(_dialogue[_currentLine]));
         _currentLine++;
         _characterASpeaking = !_characterASpeaking;
     }
