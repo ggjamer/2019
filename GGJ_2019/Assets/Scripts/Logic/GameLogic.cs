@@ -4,27 +4,50 @@ using System.Collections.Generic;
 using System.Data;
 using System.Runtime.ConstrainedExecution;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class GameLogic : MonoBehaviour
-{
+public class GameLogic : MonoBehaviour {
+    // Setup fields
+    public string initScene;
+    // Singleton variables
     private static GameLogic _instance;
     public static GameLogic Instance {
         get {
             return _instance;
         }
     }
-    
-    private GameState _gameState;
 
-    public void Init(String playerName, Sprite playerSprite) {
+    // Player Infos
+    public GameObject player;
+    public string playerName;
+    public Sprite playerSprite;
+    private Player _playerBehaviour;
+    public Vector3 PlayerPosition;
+    
+    // Game State infos
+    public GameState GameState;
+    
+    // Camera Infos
+    public Vector3 CameraPosition;
+    public float Zoom;
+
+    void Awake() {
         _instance = this;
-        _gameState = GameState.NEW_IN_TOWN;
+        SceneManager.sceneLoaded += init;
+        GameState = GameState.NEW_IN_TOWN;
+    }
+
+    void init(Scene scene, LoadSceneMode mode) {
+        player = Instantiate(player);
+        _playerBehaviour = player.GetComponent<Player>();
+        _playerBehaviour.SetParams(playerName, playerSprite);
+        _playerBehaviour.Init();
     }
     
     // Update is called once per frame
     void Update()
     {
-        switch(_gameState) {
+        switch(GameState) {
             case GameState.NEW_IN_TOWN: {
                 newInTown();
                 break;

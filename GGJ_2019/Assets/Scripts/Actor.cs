@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface Actor {
 
-    void move();
+    void Init();
 }

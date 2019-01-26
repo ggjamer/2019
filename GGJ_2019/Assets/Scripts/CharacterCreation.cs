@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class CharacterCreation : MonoBehaviour {
-    
+
+    public GameObject logicObj;
     public GameObject nameInputObj;
     public GameObject genderInputObj;
     private Text _nameInput;
@@ -37,12 +38,13 @@ public class CharacterCreation : MonoBehaviour {
 
     public void Submit() {
         if (_nameInput.text != null && _nameInput.text.Trim().Length != 0) {
-            GameObject logicObj = new GameObject("GAME_LOGIC");
+            GameObject logicObj = Instantiate(this.logicObj);
             DontDestroyOnLoad(logicObj);
-            GameLogic logic = logicObj.AddComponent<GameLogic>();
-            logic.Init(_nameInput.text, preview.sprite);
-            // Load village afterwards
-            SceneManager.LoadScene("tranquil_test.unity");
+            GameLogic logic = logicObj.GetComponent<GameLogic>();
+            logic.playerName = _nameInput.text;
+            logic.playerSprite = preview.sprite;
+        
+            SceneManager.LoadScene(logic.initScene);
         }
     }
 }

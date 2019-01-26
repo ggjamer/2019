@@ -10,16 +10,12 @@ public class PlayerMovement : MonoBehaviour
     public float speedY = 6;
 
 	private bool _inDoorRange = false;
-	public SavePlayerPosition _savePlayerPosition;
-
 	private LoadHouse _houseInRange;
 
     // Start is called before the first frame update
     void Start()
     {
-		_savePlayerPosition = GameObject.FindObjectOfType<SavePlayerPosition>();
-		gameObject.transform.position = _savePlayerPosition.GetPosition();
-		Debug.Log(_savePlayerPosition.GetPosition());
+		gameObject.transform.position = GameLogic.Instance.PlayerPosition;
     }
 
     // Update is called once per frame
@@ -33,8 +29,7 @@ public class PlayerMovement : MonoBehaviour
 
 		if(_houseInRange && Input.GetButtonDown("Jump"))
 		{
-			_savePlayerPosition.SetPosition(gameObject.transform.position);
-			Debug.Log(_savePlayerPosition.GetPosition());
+			GameLogic.Instance.PlayerPosition = gameObject.transform.position;
 			_houseInRange.LoadScene();
 		}
     }

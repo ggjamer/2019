@@ -16,7 +16,7 @@ public class NPC : MonoBehaviour, Actor
         
     }
 
-    public void move() {
+    public void Init() {
         
     }
 }
