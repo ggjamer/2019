@@ -9,6 +9,8 @@ using UnityEngine.SceneManagement;
 public class GameLogic : MonoBehaviour {
     // Setup fields
     public string initScene;
+
+    public List<StateInfo> stateInfos;
     // Singleton variables
     private static GameLogic _instance;
     public static GameLogic Instance {
@@ -18,7 +20,8 @@ public class GameLogic : MonoBehaviour {
     }
 
     // Player Infos
-    public GameObject player;
+    public GameObject playerObj;
+    private GameObject player;
     public string playerName;
     public Sprite playerSprite;
     private Player _playerBehaviour;
@@ -38,7 +41,7 @@ public class GameLogic : MonoBehaviour {
     }
 
     void init(Scene scene, LoadSceneMode mode) {
-        player = Instantiate(player);
+        player = Instantiate(playerObj);
         _playerBehaviour = player.GetComponent<Player>();
         _playerBehaviour.SetParams(playerName, playerSprite);
         _playerBehaviour.Init();
