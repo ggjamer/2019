@@ -11,7 +11,6 @@ public class GameLogic : MonoBehaviour {
     // Setup fields
     public string initScene;
 
-    public List<StateInfo> stateInfos;
     // Singleton variables
     private static GameLogic _instance;
     public static GameLogic Instance {
@@ -37,12 +36,12 @@ public class GameLogic : MonoBehaviour {
     public GameObject innkeeper;
     public GameObject storekeeper;
     public GameObject priest;
-    private List<GameObject> activeNPCs;
+    private List<GameObject> activeNPCs = new List<GameObject>();
     
     // Game State infos
     public GameState GameState;
     public StateInfo[] StateInfos;
-    private Locations _location;
+    public Locations Location;
     
     // Camera Infos
     public Vector3 CameraPosition;
@@ -60,11 +59,10 @@ public class GameLogic : MonoBehaviour {
         _playerBehaviour = player.GetComponent<Player>();
         _playerBehaviour.SetParams(playerName, animatorController);
         _playerBehaviour.Init();
-
-        _location = StateInfos[(int) GameState].initialLocation;
         
         //Create NPCs
-        foreach (ActorTypes npc in GetPeopleAtLocation(_location)) {
+        List<ActorTypes> npcs = GetPeopleAtLocation(Location);
+        foreach (ActorTypes npc in npcs) {
             CreateNPC(npc);
         }
     }
@@ -177,7 +175,7 @@ public class GameLogic : MonoBehaviour {
 
         NPC npcBehaviour = npc.AddComponent<NPC>();
         npcBehaviour.actorType = npcType;
-        if (_location == Locations.OUTSIDE) {
+        if (Location == Locations.OUTSIDE) {
             npc.transform.position = npcBehaviour.OutdoorPosition;
         }
         activeNPCs.Add(npc);
@@ -185,8 +183,10 @@ public class GameLogic : MonoBehaviour {
 
     public List<ActorTypes> GetPeopleAtLocation(Locations location) {
         List<ActorTypes> results = new List<ActorTypes>();
-        StateInfo stateInfo = stateInfos[(int) GameState];
+        StateInfo stateInfo = StateInfos[(int) GameState];
         
+        Debug.Log(stateInfo);
+        Debug.Log(location);
         // This is so ugly :(
         if (stateInfo.DADDY == location) {
             results.Add(ActorTypes.DADDY);
