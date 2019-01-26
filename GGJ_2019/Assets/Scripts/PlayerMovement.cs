@@ -2,18 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations;
-using UnityEngine.SceneManagement;
+
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float speedX = 20;
+	public float speedX = 20;
     public float speedY = 6;
 
-	private bool inDoorRange = false;
+	private bool _inDoorRange = false;
+	public SavePlayerPosition _savePlayerPosition;
+
+	private LoadHouse _houseInRange;
 
     // Start is called before the first frame update
     void Start()
     {
+		_savePlayerPosition = GameObject.FindObjectOfType<SavePlayerPosition>();
+		gameObject.transform.position = _savePlayerPosition.GetPosition();
+		Debug.Log(_savePlayerPosition.GetPosition());
     }
 
     // Update is called once per frame
@@ -25,27 +31,33 @@ public class PlayerMovement : MonoBehaviour
             Time.deltaTime * speedY * Input.GetAxis("Vertical")));
 
 
-		if(Input.GetButtonDown("Jump"))
+		if(_houseInRange && Input.GetButtonDown("Jump"))
 		{
-			Debug.Log("house entered");
-			SceneManager.LoadScene("verlust_robert");
+			_savePlayerPosition.SetPosition(gameObject.transform.position);
+			Debug.Log(_savePlayerPosition.GetPosition());
+			_houseInRange.LoadScene();
 		}
     }
 
+
+
+
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
+		
 		if (collision.tag == "Door")
 		{
 			Debug.Log("At door");
-			inDoorRange = true;
+			_houseInRange = collision.GetComponent<LoadHouse>();
 		}
+
 	}
 
 	private void OnTriggerExit2D(Collider2D collision)
 	{
 		if(collision.tag == "Door")
 		{
-			inDoorRange = false;
+			_houseInRange = null;
 		}
 	}
 
