@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: 328c8b8fdd0a27330888957a0ed02f19
+  - enabled: 1
+    path: Assets/Scenes/tranquil_test.unity
+    guid: 41d1cb689d6d4974f9e2569c3d208d51
   m_configObjects: {}
