@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
 	private LoadHouse _houseInRange;
 
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
 		_savePlayerPosition = GameObject.FindObjectOfType<SavePlayerPosition>();
 		gameObject.transform.position = _savePlayerPosition.GetPosition();
