@@ -2434,7 +2434,7 @@ PrefabInstance:
         type: 3}
       propertyPath: maleAnimatorController
       value: 
-      objectReference: {fileID: 9100000, guid: ec2e06a87e171c1b5bc9c0899e7883da, type: 2}
+      objectReference: {fileID: 9100000, guid: 1be52a0a3210c1e1db61b1e698336955, type: 2}
     - target: {fileID: 1493585714848782112, guid: 04f224b5c3a75a9ac8472a8993b41726,
         type: 3}
       propertyPath: femaleAnmiController
