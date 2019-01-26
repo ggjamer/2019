@@ -7,29 +7,52 @@ public class CameraMovement : MonoBehaviour
 	public float DeadZoneX = 10;
 	public float DeadZoneY = 5;
 
+
+	private Vector3[] _housePositions;
+
 	private Camera _camera;
 	private Transform _playerTransform;
 	private Vector2 _velocity;
 
-    // Start is called before the first frame update
-    void Start()
-    {
+	public float HouseCameraSize = 10;
+	public float HouseZoomDistance = 10;
+
+
+	private float _defaultCameraSize;
+
+	// Start is called before the first frame update
+	void Start()
+	{
 		_camera = Camera.main;
+		_defaultCameraSize = _camera.orthographicSize;
+
 		_playerTransform = gameObject.transform;
 		_camera.transform.position = _playerTransform.position;
 		_camera.transform.position += new Vector3(0, 0, -1);
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
+		GameObject[] houses;
+		houses = GameObject.FindGameObjectsWithTag("HousePosition");
+
+		_housePositions = new Vector3[houses.Length];
+		for (int i = 0; i < houses.Length; i++)
+		{
+			_housePositions[i] = houses[i].transform.position;
+		}
+
+	}
+
+	// Update is called once per frame
+	void Update()
+	{
 		//transformPoint oder inversetransformpoint
 		Vector3 playerInCameraSpace = _camera.transform.InverseTransformPoint(_playerTransform.position);
-		if(playerInCameraSpace.x > DeadZoneX || playerInCameraSpace.x < -DeadZoneX 
+		if (playerInCameraSpace.x > DeadZoneX || playerInCameraSpace.x < -DeadZoneX
 			|| playerInCameraSpace.y > DeadZoneY || playerInCameraSpace.y < -DeadZoneY)
 		{
 			FollowPlayer();
 		}
+
+		UpdateCameraDist();
 
 	}
 
@@ -40,4 +63,20 @@ public class CameraMovement : MonoBehaviour
 		_camera.transform.position = Vector2.SmoothDamp(_camera.transform.position, _playerTransform.position, ref _velocity, 0.15f);
 		_camera.transform.position = new Vector3(_camera.transform.position.x, _camera.transform.position.y, -1);
 	}
+
+
+	void UpdateCameraDist()
+	{
+		for (int i = 0; i < _housePositions.Length; i++)
+		{
+			if (Vector2.Distance(_housePositions[i], _playerTransform.position) < HouseZoomDistance)
+			{
+				Debug.Log("in range");
+				float distance = Vector2.Distance(_playerTransform.position, _housePositions[i]);
+				distance = distance / HouseZoomDistance;
+				_camera.orthographicSize = Mathf.Lerp(HouseCameraSize, _defaultCameraSize,  distance);
+			}
+		}
+	}
+
 }
