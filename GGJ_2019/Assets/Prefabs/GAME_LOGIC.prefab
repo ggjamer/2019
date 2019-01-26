@@ -44,7 +44,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initScene: Tranquil_fenja
-  player: {fileID: 8333931549320749573, guid: 3a6f0e62f2ee36149b4f014bc018517c, type: 3}
+  stateInfos: []
+  playerObj: {fileID: 8333931549320749573, guid: 3a6f0e62f2ee36149b4f014bc018517c,
+    type: 3}
   playerName: 
   playerSprite: {fileID: 0}
   PlayerPosition: {x: 0, y: 0, z: 0}
