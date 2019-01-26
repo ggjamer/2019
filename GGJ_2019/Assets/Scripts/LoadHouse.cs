@@ -7,9 +7,10 @@ public class LoadHouse : MonoBehaviour
 {
 
 	public string SceneName;
+	public Locations location;
 
-	public void LoadScene()
-	{
+	public void LoadScene() {
+		GameLogic.Instance.Location = location;
 		SceneManager.LoadScene(SceneName);
 	}
 }

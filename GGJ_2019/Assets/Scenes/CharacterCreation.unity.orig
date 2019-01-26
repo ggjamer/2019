@@ -2415,6 +2415,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: CharacterCreation
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 1493585714848782112, guid: 04f224b5c3a75a9ac8472a8993b41726,
         type: 3}
       propertyPath: nameInputObj
@@ -2452,6 +2453,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 9604f12090fecc006b72ed68c48426ea,
         type: 3}
+=======
+>>>>>>> 4298eba93248881f167937775aa6e0c556a752d6
     - target: {fileID: 1493585714848782113, guid: 04f224b5c3a75a9ac8472a8993b41726,
         type: 3}
       propertyPath: m_LocalPosition.x

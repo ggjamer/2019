@@ -43,13 +43,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4456c3cc7b7cdcc358b446722fc0701c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initScene: Tranquil_Fenja
-  stateInfos: []
+  initScene: NewInTown
   playerObj: {fileID: 8333931549320749573, guid: 3a6f0e62f2ee36149b4f014bc018517c,
     type: 3}
   playerName: 
   animatorController: {fileID: 0}
   PlayerPosition: {x: 0, y: 0, z: 0}
+  mayor: {fileID: 1833109822685198306, guid: b87608a2bf98f5f4685b999fc9c52e0a, type: 3}
+  boatman: {fileID: 8434111416791307739, guid: 7b3c6a143a5fac5fe8151b6c6fe9adee, type: 3}
+  policeman: {fileID: 5780205544746360640, guid: ddc877a16c89348a4b7314d60ccc2d7c,
+    type: 3}
+  daddy: {fileID: 4225308608402916093, guid: 6b27d8d96f798d344b5ab0c1e470aa4f, type: 3}
+  barkeeper: {fileID: 3245094740999487773, guid: 8d1e1ef9aedcfc589abf72d4dd9f7add,
+    type: 3}
+  innkeeper: {fileID: 200495952206728501, guid: 894d4becc9654db82ae395a11f8fa22a,
+    type: 3}
+  storekeeper: {fileID: 8288982382104761657, guid: c09c09c8248c7382dabad3a0b93c5f94,
+    type: 3}
+  priest: {fileID: 4405724863799759415, guid: 5d3ead7e172c6636eba75a928eb50c03, type: 3}
   GameState: 0
+  StateInfos:
+  - {fileID: 11400000, guid: faa45157dac4a500cbe54e1743d196ca, type: 2}
+  - {fileID: 11400000, guid: fd13136b54b90b3ac9a5d6af3be50e83, type: 2}
+  - {fileID: 11400000, guid: 246d5a1ae63f9e3af99cd480e3bd8044, type: 2}
+  - {fileID: 11400000, guid: e9529185c7cc2a85ba748e09e4e2074d, type: 2}
+  - {fileID: 11400000, guid: c977474769fa8a80e9138dbb20bb2d32, type: 2}
+  - {fileID: 11400000, guid: 6447b2865c89741e1921571143f7fd42, type: 2}
+  - {fileID: 11400000, guid: 0d7ce6de79902537fa05bedad4e2ca1d, type: 2}
+  Location: 1
   CameraPosition: {x: 0, y: 0, z: 0}
   Zoom: 0

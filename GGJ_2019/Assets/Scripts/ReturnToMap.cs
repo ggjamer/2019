@@ -20,6 +20,7 @@ public class ReturnToMap : MonoBehaviour
         if(Input.GetButton("Jump"))
 		{
 			//SceneManager.LoadScene("Tranquil_Fenja");
+			GameLogic.Instance.Location = Locations.OUTSIDE;
 			SceneManager.LoadScene(_mapName);
 		}
     }
