@@ -24,7 +24,7 @@ public class Menu : MonoBehaviour
     
     public void Continue()
     {
-        SceneManager.LoadScene("tranquil_test");
+        SceneManager.LoadScene("CharacterCreation");
     }
     
     public void Save(){
