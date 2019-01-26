@@ -15,10 +15,6 @@ public class Item : MonoBehaviour, Interactible
     {
         
     }
-    
-    public void Init() {
-        
-    }
 
     public bool IsInteractible() {
         return false;
