@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
+using System.Runtime.ConstrainedExecution;
 using UnityEngine;
 
 public class GameLogic : MonoBehaviour
@@ -13,16 +15,12 @@ public class GameLogic : MonoBehaviour
     }
     
     private GameState _gameState;
-    
-    void Awake() {
+
+    public void Init(String playerName, Sprite playerSprite) {
         _instance = this;
-    }
-    
-    // Start is called before the first frame update
-    void Start() {
         _gameState = GameState.NEW_IN_TOWN;
     }
-
+    
     // Update is called once per frame
     void Update()
     {
