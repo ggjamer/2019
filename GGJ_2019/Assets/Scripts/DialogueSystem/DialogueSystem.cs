@@ -59,8 +59,10 @@ public class DialogueSystem : MonoBehaviour
         _dialogue = diag.diaglogue;
         _characterAName = diag.PersonA;
         _characterBName = diag.PersonB;
-        LeftCharacterImage.ToggleCharacter(OpeningAnimationDuration, GetPortraitForCharacter(diag.PersonA));
-        RightCharacterImage.ToggleCharacter(OpeningAnimationDuration, GetPortraitForCharacter(diag.PersonB));
+		RightCharacterImage._image.sprite = diag.PersonAImage; // sorry luca
+		LeftCharacterImage._image.sprite = diag.PersonBImage; // sorry luca
+		LeftCharacterImage.ToggleCharacter(OpeningAnimationDuration, GetPortraitForCharacter(diag.PersonA));
+		RightCharacterImage.ToggleCharacter(OpeningAnimationDuration, GetPortraitForCharacter(diag.PersonB));
 
         TextCanvas.DOFade(1, OpeningAnimationDuration);
 

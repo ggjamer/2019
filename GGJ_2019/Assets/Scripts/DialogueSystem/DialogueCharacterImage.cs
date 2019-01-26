@@ -7,7 +7,7 @@ public class DialogueCharacterImage : MonoBehaviour
 {
     public bool OpensTotTheLeft;
     
-    private Image _image;
+    public Image _image;
 
     private bool _characterShown;
 
