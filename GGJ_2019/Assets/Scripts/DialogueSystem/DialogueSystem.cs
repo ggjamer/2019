@@ -21,49 +21,40 @@ public class DialogueSystem : MonoBehaviour
 
     private void Start()
     {
-        StartDialogue("test", "test2", new []{"adfasdfadf", "145245234653", "sadgfgfdga"});
+        TextCanvas.alpha = 0;
+        StartDialogue("test", "test2", new[] {"adfasdfadf", "145245234653", "sadgfgfdga"});
     }
-    
+
     private void Update()
     {
-        if (_dialogue != null)
-        {
-            if (Input.GetButtonDown("Action"))
-            {
-                
-                Debug.Log("Space pressed");
-                
-                if (_currentLine == -1)
-                {
-                    
-                    Debug.Log("ending dialogue");
-                    
-                    _alphaTween.PlayBackwards();
-                    
-                    LeftCharacterImage.ToggleCharacter(OpeningAnimationDuration);
-                    RightCharacterImage.ToggleCharacter(OpeningAnimationDuration);
+        if (_dialogue == null) return;
 
-                    _dialogue = null;
-                }
-                else
-                {
-                    PlayNextLine();
-                    
-                    _currentLine++;
-                    _characterASpeaking = !_characterASpeaking;
-                    if (_currentLine >= _dialogue.Length)
-                    {
-                        Debug.Log("Dialogue ended");
-                        _currentLine = -1;
-                    }
-                }
+
+        if (!Input.GetButtonDown("Action")) return;
+        if (_currentLine == -1)
+        {
+            Debug.Log("ending dialogue");
+
+            TextCanvas.DOFade(0, OpeningAnimationDuration);
+
+            LeftCharacterImage.ToggleCharacter(OpeningAnimationDuration);
+            RightCharacterImage.ToggleCharacter(OpeningAnimationDuration);
+
+            _dialogue = null;
+        }
+        else
+        {
+            PlayNextLine();
+            if (_currentLine >= _dialogue.Length)
+            {
+                Debug.Log("Dialogue ended");
+                _currentLine = -1;
             }
         }
     }
 
     public void StartDialogue(string characterA, string characterB, string[] dialogue)
     {
-        
         Debug.Log("Starting dialogue");
         _dialogue = dialogue;
         _characterAName = characterA;
@@ -71,8 +62,7 @@ public class DialogueSystem : MonoBehaviour
         LeftCharacterImage.ToggleCharacter(OpeningAnimationDuration, GetPortraitForCharacter(characterA));
         RightCharacterImage.ToggleCharacter(OpeningAnimationDuration, GetPortraitForCharacter(characterB));
 
-        _alphaTween?.Kill();
-        _alphaTween = TextCanvas.DOFade(1, OpeningAnimationDuration);
+        TextCanvas.DOFade(1, OpeningAnimationDuration);
 
         _currentLine = 0;
         _characterASpeaking = true;
@@ -82,8 +72,10 @@ public class DialogueSystem : MonoBehaviour
     private void PlayNextLine()
     {
         SpeakerNameText.text = _characterASpeaking ? _characterAName : _characterBName;
-        
+
         StartCoroutine(PlayText(_dialogue[_currentLine]));
+        _currentLine++;
+        _characterASpeaking = !_characterASpeaking;
     }
 
     private IEnumerator PlayText(string text)

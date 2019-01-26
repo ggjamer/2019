@@ -403,7 +403,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LeftCharacterImage: {fileID: 6381949241498159638}
   RightCharacterImage: {fileID: 4377213447859217121}
-  TextCanvas: {fileID: 0}
+  TextCanvas: {fileID: 5703797909462241787}
   SpeakerNameText: {fileID: 4388647833185002269}
   DialogueText: {fileID: 2954108545000431506}
   OpeningAnimationDuration: 1
