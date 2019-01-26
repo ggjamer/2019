@@ -24,7 +24,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Store.unity
     guid: b546ee6d432dbf54eb19d2d2846a4a3b
   - enabled: 1
-    path: Assets/Scenes/Town Hall.unity
+    path: Assets/Scenes/TownHall.unity
     guid: 937f5886c77199940b724f88e26f0c5d
   - enabled: 1
     path: Assets/Scenes/Menu.unity

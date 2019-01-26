@@ -548,7 +548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43878ccb0a25ae3488d283b1c50bb47f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: ' Town Hall'
+  SceneName: TownHall
 --- !u!1001 &1586442134842325362
 PrefabInstance:
   m_ObjectHideFlags: 0
