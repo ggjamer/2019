@@ -4,14 +4,14 @@ using UnityEngine;
 
 public enum Locations
 {
+    NONE,
+    OUTSIDE,
     TOWNHALL,
     INN,
     BAR,
     POLICE_OFFICE,
     CHURCH,
-    POLICE_HOME,
-    STORE_HOME,
-    YOUR_HOME,
+    STORE,
     BOAT_HOUSE
       
 }

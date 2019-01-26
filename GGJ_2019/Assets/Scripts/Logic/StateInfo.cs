@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "Data", menuName = "GameState", order = 1)]
 public class StateInfo : ScriptableObject
 {
     //Interactible components;
@@ -9,10 +10,17 @@ public class StateInfo : ScriptableObject
     public bool coffeeBox;
     
     //Inventory
-    public List<Item> inventory = new List<Item>();
+    public List<Item> inventory;
     
     //People locations
-    public Dictionary<NPC, Locations> peopleLocations = new Dictionary<NPC, Locations>();
+    public Locations MAYOR;
+    public Locations BOATMAN;
+    public Locations DADDY;
+    public Locations POLICEMAN;
+    public Locations BARKEEPER;
+    public Locations INNKEEPER;
+    public Locations STOREKEEPER;
+    public Locations PRIEST;
     
     //Dialogues
 }

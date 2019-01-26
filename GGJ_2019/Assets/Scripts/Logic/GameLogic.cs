@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Runtime.ConstrainedExecution;
+using UnityEditor.VersionControl;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -27,8 +28,19 @@ public class GameLogic : MonoBehaviour {
     private Player _playerBehaviour;
     public Vector3 PlayerPosition;
     
+    //NPC Prefabs
+    public GameObject mayor;
+    public GameObject boatman;
+    public GameObject policeman;
+    public GameObject daddy;
+    public GameObject barkeeper;
+    public GameObject innkeeper;
+    public GameObject storekeeper;
+    public GameObject priest;
+    
     // Game State infos
     public GameState GameState;
+    public StateInfo[] StateInfos;
     
     // Camera Infos
     public Vector3 CameraPosition;
@@ -111,5 +123,37 @@ public class GameLogic : MonoBehaviour {
 
     private void finale() {
         
+    }
+
+    public List<ActorTypes> GetPeopleAtLocation(Locations location) {
+        List<ActorTypes> results = new List<ActorTypes>();
+        StateInfo stateInfo = stateInfos[(int) GameState];
+        
+        // This is so ugly :(
+        if (stateInfo.DADDY == location) {
+            results.Add(ActorTypes.DADDY);
+        }
+        if (stateInfo.BOATMAN == location) {
+            results.Add(ActorTypes.BOATMAN);
+        }
+        if (stateInfo.MAYOR == location) {
+            results.Add(ActorTypes.MAYOR);
+        }
+        if (stateInfo.POLICEMAN == location) {
+            results.Add(ActorTypes.POLICEMAN);
+        }
+        if (stateInfo.BARKEEPER == location) {
+            results.Add(ActorTypes.BARKEEPER);
+        }
+        if (stateInfo.INNKEEPER == location) {
+            results.Add(ActorTypes.INNKEEPER);
+        }
+        if (stateInfo.STOREKEEPER == location) {
+            results.Add(ActorTypes.STOREKEEPER);
+        }
+        if (stateInfo.PRIEST == location) {
+            results.Add(ActorTypes.PRIEST);
+        }
+        return results;
     }
 }

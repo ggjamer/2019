@@ -50,6 +50,22 @@ MonoBehaviour:
   playerName: 
   playerSprite: {fileID: 0}
   PlayerPosition: {x: 0, y: 0, z: 0}
+  mayor: {fileID: 0}
+  boatman: {fileID: 0}
+  policeman: {fileID: 0}
+  daddy: {fileID: 0}
+  barkeeper: {fileID: 0}
+  innkeeper: {fileID: 0}
+  storekeeper: {fileID: 0}
+  priest: {fileID: 0}
   GameState: 0
+  StateInfos:
+  - {fileID: 11400000, guid: faa45157dac4a500cbe54e1743d196ca, type: 2}
+  - {fileID: 11400000, guid: fd13136b54b90b3ac9a5d6af3be50e83, type: 2}
+  - {fileID: 11400000, guid: 246d5a1ae63f9e3af99cd480e3bd8044, type: 2}
+  - {fileID: 11400000, guid: e9529185c7cc2a85ba748e09e4e2074d, type: 2}
+  - {fileID: 11400000, guid: c977474769fa8a80e9138dbb20bb2d32, type: 2}
+  - {fileID: 11400000, guid: 6447b2865c89741e1921571143f7fd42, type: 2}
+  - {fileID: 11400000, guid: 0d7ce6de79902537fa05bedad4e2ca1d, type: 2}
   CameraPosition: {x: 0, y: 0, z: 0}
   Zoom: 0
