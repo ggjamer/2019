@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations;
 
 public class Player : MonoBehaviour{
     private string _name;
@@ -41,6 +42,18 @@ public class Player : MonoBehaviour{
                                    Time.deltaTime * speedX * Input.GetAxis("Horizontal"), 
                                    Time.deltaTime * speedY * Input.GetAxis("Vertical")));
 
+        if (Input.GetAxis("Horizontal") > 0)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+            GetComponent<Animator>().SetBool("walking", true);
+        }else if (Input.GetAxis("Horizontal") < 0){
+            transform.localScale = new Vector3(-1,1,1);
+            GetComponent<Animator>().SetBool("walking", true);
+        }
+        else
+        {
+            GetComponent<Animator>().SetBool("walking", false);
+        }
 
         if(_houseInRange && Input.GetButtonDown("Jump"))
         {

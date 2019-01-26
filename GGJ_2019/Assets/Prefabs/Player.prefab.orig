@@ -204,9 +204,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e94f53b6edc3e4fa89f160fd6226eb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  indoorLocation: {x: -20, y: 0, z: 20}
+<<<<<<< HEAD
   speedX: 10
   speedY: 7
+=======
+  indoorLocation: {x: -20, y: 0, z: 20}
+  speedX: 20
+  speedY: 6
+>>>>>>> 4298eba93248881f167937775aa6e0c556a752d6
 --- !u!95 &92888043
 Animator:
   serializedVersion: 3
