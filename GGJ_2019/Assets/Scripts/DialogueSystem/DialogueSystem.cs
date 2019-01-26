@@ -22,7 +22,6 @@ public class DialogueSystem : MonoBehaviour
     private void Start()
     {
         TextCanvas.alpha = 0;
-        StartDialogue("test", "test2", new[] {"adfasdfadf", "145245234653", "sadgfgfdga"});
     }
 
     private void Update()
