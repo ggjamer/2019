@@ -5,10 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class ReturnToMap : MonoBehaviour
 {
+
+	private string _mapName;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+		_mapName = GameObject.Find("GAME_LOGIC(Clone)").GetComponent<GameLogic>().initScene;
     }
 
     // Update is called once per frame
@@ -16,7 +19,8 @@ public class ReturnToMap : MonoBehaviour
     {
         if(Input.GetButton("Jump"))
 		{
-			SceneManager.LoadScene("tranquil_test");
+			//SceneManager.LoadScene("Tranquil_Fenja");
+			SceneManager.LoadScene(_mapName);
 		}
     }
 }

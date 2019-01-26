@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour, Actor {
+public class Player : MonoBehaviour{
     private string _name;
     private Sprite _sprite;
    
@@ -64,6 +64,12 @@ public class Player : MonoBehaviour, Actor {
         if(collision.tag == "Door")
         {
             _houseInRange = null;
+        }
+    }
+
+    public void Interact(Interactible obj) {
+        if (obj.IsInteractible()) {
+            obj.Dialogue();
         }
     }
 }
