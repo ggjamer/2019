@@ -109,18 +109,17 @@ public class CameraMovement : MonoBehaviour
 			moveToHouse = LookAtHouse(collision);
 			StartCoroutine(moveToHouse);
 		}
-		if(collision.tag == "Door") //TDOO: an sinnvollen ort verschieben
-		{
-			Debug.Log("door");
-		}
 		//Debug.Log("enterd house zone");
 	}
 
 	private void OnTriggerExit2D(Collider2D collision)
 	{
-		StopCoroutine(moveToHouse);
-		triggerControlled = false;
-		//Debug.Log("exited house zone");
+		if (collision.tag == "HousePosition")
+		{
+			StopCoroutine(moveToHouse);
+			triggerControlled = false;
+			//Debug.Log("exited house zone");
+		}
 	}
 
 	IEnumerator LookAtHouse(Collider2D collision)
