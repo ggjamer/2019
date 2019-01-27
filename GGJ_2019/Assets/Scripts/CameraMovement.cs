@@ -32,11 +32,16 @@ public class CameraMovement : MonoBehaviour
 		_camera = Camera.main;
 		_defaultCameraSize = _camera.orthographicSize;
 
+
 		_playerTransform = gameObject.transform;
 		lastPlayerPosition = _playerTransform.position;
-		_camera.transform.position = _playerTransform.position;
-		_camera.transform.position += new Vector3(0, 0, -1);
 
+		if (GameLogic.Instance.Location == Locations.OUTSIDE)
+		{
+			_camera.transform.position = _playerTransform.position;
+			_camera.transform.position += new Vector3(0, 0, -1);
+		}
+		
 		GameObject[] houses;
 		houses = GameObject.FindGameObjectsWithTag("HousePosition");
 
@@ -52,25 +57,30 @@ public class CameraMovement : MonoBehaviour
 	// Update is called once per frame
 	void Update() //TODO: weniger kamerabewegung weil ruckeln
 	{
-		if (!triggerControlled)
+		if (GameLogic.Instance.Location == Locations.OUTSIDE)
 		{
-			Vector3 playerInCameraSpace = _camera.transform.InverseTransformPoint(_playerTransform.position);
-			if (playerInCameraSpace.x > DeadZoneX || playerInCameraSpace.x < -DeadZoneX
-				|| playerInCameraSpace.y > DeadZoneY || playerInCameraSpace.y < -DeadZoneY)
+			if (!triggerControlled)
 			{
-				FollowPlayer();
+				Vector3 playerInCameraSpace = _camera.transform.InverseTransformPoint(_playerTransform.position);
+				if (playerInCameraSpace.x > DeadZoneX || playerInCameraSpace.x < -DeadZoneX
+					|| playerInCameraSpace.y > DeadZoneY || playerInCameraSpace.y < -DeadZoneY)
+				{
+					FollowPlayer();
+				}
+
+				if (lastPlayerPosition == _playerTransform.position)
+				{
+					FollowPlayer();
+				}
+
+				lastPlayerPosition = _playerTransform.position;
 			}
 
-			if (lastPlayerPosition == _playerTransform.position)
-			{
-				FollowPlayer();
-			}
 
-			lastPlayerPosition = _playerTransform.position;
+			UpdateCameraSize();
+
+
 		}
-
-
-		UpdateCameraSize();
 
 	}
 
