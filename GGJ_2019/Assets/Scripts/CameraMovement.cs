@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
+
 	public float DeadZoneX = 10;
 	public float DeadZoneY = 5;
 
@@ -132,6 +133,5 @@ public class CameraMovement : MonoBehaviour
 			_camera.transform.position = new Vector3(_camera.transform.position.x, _camera.transform.position.y, -1);
 			yield return new WaitForSeconds(0.015f);
 		}
-
 	}
 }
