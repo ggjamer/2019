@@ -6,6 +6,7 @@ TagManager:
   tags:
   - HousePosition
   - Door
+  - NPC
   layers:
   - Default
   - TransparentFX
