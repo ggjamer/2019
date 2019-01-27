@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3110bbe428af79940b9b2041390d6eca, type: 3}
+  m_Name: storekeeper_02
+  m_EditorClassIdentifier: 
+  PersonA: Storekeeper
+  PersonAImage: {fileID: 0}
+  PersonB: 
+  PersonBImage: {fileID: 0}
+  diaglogue:
+  - ' Hi. How can I help you?'
+  - Do you have some flour?
+  - "Sure. My daddy used to sail up to Stonebridge to provide the finest flour. Now
+    my\u2026 boyfriend\u2019s in charge for it, but he always gets the cheap flour,
+    which is just not that great and\u2026 sorry, I\u2019m blabbering. Do you need
+    anything else?"
+  - No, thank you.
+  - "You\u2019re welcome. If only my daddy was here to get some of the good flour,
+    though.\n"

@@ -5,16 +5,13 @@ using UnityEngine;
 
 public class NPC : MonoBehaviour, Interactible {
     public ActorTypes actorType;
-    
-    // All dialogues of this npc
-    // The array position is indicised by the Game State
-    public DialogueObject[] dialogues;
+    public DialogueObject currentDialogue;
 
     public bool IsInteractible() {
         return false;
     }
 
     public void Dialogue() {
-        int idx = (int) GameLogic.Instance.GameState;
+        GameLogic.Instance.DialogueSystem.StartDialogue(currentDialogue);
     }
 }

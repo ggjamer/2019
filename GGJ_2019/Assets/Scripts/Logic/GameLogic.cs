@@ -39,10 +39,24 @@ public class GameLogic : MonoBehaviour {
     public Vector3 CameraPosition;
     public float Zoom;
 
+    // Dialogue Handling
+    public GameObject dialogueSystemObj;
+    public DialogueSystem DialogueSystem;
+    public DialogueObject[] newInTownDialogues;
+    public DialogueObject[] scandalDialogues;
+    public DialogueObject[] mayorsPermissionDialogues;
+    public DialogueObject[] jailVisitDialogues;
+    public DialogueObject[] toughballTalkDialogues;
+    public DialogueObject[] coffeeBreakDialogues;
+    public DialogueObject[] finaleDialogues;
+    private int dialogueIndex;
+    
     void Awake() {
         _instance = this;
         SceneManager.sceneLoaded += init;
         GameState = GameState.NEW_IN_TOWN;
+        DialogueSystem = dialogueSystemObj.GetComponent<DialogueSystem>();
+        dialogueIndex = 1;
     }
 
     void init(Scene scene, LoadSceneMode mode) {
@@ -59,71 +73,6 @@ public class GameLogic : MonoBehaviour {
         }
     }
     
-    // Update is called once per frame
-    void Update()
-    {
-        switch(GameState) {
-            case GameState.NEW_IN_TOWN: {
-                newInTown();
-                break;
-            }
-            case GameState.SCANDAL: {
-                scandal();
-                break;
-            }
-            case GameState.MAYORS_PERMISSION: {
-                mayorsPermission();
-                break;
-            }
-            case GameState.JAIL_VISIT: {
-                jailVisit();
-                break;
-            }
-            case GameState.TOUGHBALL_TALK: {
-                toughballTalk();
-                break;
-            }
-            case GameState.COFFEE_BREAK: {
-                coffeeBreak();
-                break;
-            }
-            case GameState.FINALE: {
-                finale();
-                break;
-            }
-            default: {
-                throw new InvalidExpressionException("Invalid Game State");
-            }
-        }
-    }
-
-    private void newInTown() {
-        
-    }
-
-    private void scandal() {
-        
-    }
-
-    private void mayorsPermission() {
-        
-    }
-
-    private void jailVisit() {
-        
-    }
-
-    private void toughballTalk() {
-        
-    }
-
-    private void coffeeBreak() {
-        
-    }
-
-    private void finale() {
-        
-    }
 
     private void CreateNPC(ActorTypes npcType) {
         GameObject npc;
@@ -165,6 +114,8 @@ public class GameLogic : MonoBehaviour {
             }
         }
 
+        NPC npcBehaviour = npc.GetComponent<NPC>();
+        npcBehaviour.currentDialogue = GetCurrentDialogue(npcType, dialogueIndex);
         activeNPCs.Add(npc);
     }
 
@@ -200,5 +151,41 @@ public class GameLogic : MonoBehaviour {
             results.Add(ActorTypes.PRIEST);
         }
         return results;
+    }
+
+    public DialogueObject GetCurrentDialogue(ActorTypes id, int idx) {
+        DialogueObject[] array = newInTownDialogues; 
+        switch (GameState) {
+            case GameState.NEW_IN_TOWN: {
+                array = newInTownDialogues;
+                break;
+            }
+            case GameState.SCANDAL: {
+                array = scandalDialogues;
+                break;
+            }
+            case GameState.MAYORS_PERMISSION: {
+                array = mayorsPermissionDialogues;
+                break;
+            }
+            case GameState.JAIL_VISIT: {
+                array = jailVisitDialogues;
+                break;
+            }
+            case GameState.TOUGHBALL_TALK: {
+                array = toughballTalkDialogues;
+                break;
+            }
+            case GameState.COFFEE_BREAK: {
+                array = coffeeBreakDialogues;
+                break;
+            }
+            case GameState.FINALE: {
+                array = finaleDialogues;
+                break;
+            }
+        }
+
+        return Array.Find<DialogueObject>(array, d => d.actorIdentifier == id && (d.index == 0 || d.index == idx));
     }
 }
