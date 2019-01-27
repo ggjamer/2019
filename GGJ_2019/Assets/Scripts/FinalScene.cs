@@ -18,6 +18,9 @@ public class FinalScene : MonoBehaviour {
         dsObj = Instantiate(dialogueSystem);
         system = dsObj.GetComponent<DialogueSystem>();
         system.finished = true;
+		GameObject music = GameObject.Find("Music");
+		music.GetComponent<MusicController>().PlayFinaleMusic();
+
     }
 
     void Update() {
@@ -26,6 +29,7 @@ public class FinalScene : MonoBehaviour {
             if (system.finished) {
                 Debug.Log(idx);
                 system.StartDialogue(current);
+				system.FinalDialogue();
                 idx++;
             }
         }

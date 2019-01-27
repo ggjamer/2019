@@ -10,6 +10,7 @@ public class DialogueCharacterImage : MonoBehaviour
     public Image _image;
 
     private bool _characterShown;
+	public bool FinaleActive = false;
 
     void Awake()
     {
@@ -20,8 +21,10 @@ public class DialogueCharacterImage : MonoBehaviour
     {
         if (characterImage != null) _image.sprite = characterImage;
 
-        _image.rectTransform.DOAnchorPosX(_image.rectTransform.anchoredPosition.x + (_characterShown ^ OpensTotTheLeft ? -1 : 1) * _image.rectTransform.rect.width, duration);
+		if(!FinaleActive)
+			_image.rectTransform.DOAnchorPosX(_image.rectTransform.anchoredPosition.x + (_characterShown ^ OpensTotTheLeft ? -1 : 1) * _image.rectTransform.rect.width, duration);
         
         _characterShown = !_characterShown;
     }
+
 }
