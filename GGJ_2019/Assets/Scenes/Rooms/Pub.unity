@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571343, b: 0.30692208, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028328, g: 0.22571322, b: 0.30692163, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -127,7 +127,7 @@ PrefabInstance:
     - target: {fileID: 274150007884298633, guid: 8d1e1ef9aedcfc589abf72d4dd9f7add,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.43
+      value: -0.89
       objectReference: {fileID: 0}
     - target: {fileID: 274150007884298633, guid: 8d1e1ef9aedcfc589abf72d4dd9f7add,
         type: 3}
@@ -260,7 +260,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 15.3177395, y: 8.37921}
+  m_Offset: {x: 15.3177395, y: 8.121988}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -271,7 +271,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 31.635475, y: 1.7825527}
+  m_Size: {x: 31.635475, y: 2.296997}
   m_EdgeRadius: 0
 --- !u!61 &306315119
 BoxCollider2D:

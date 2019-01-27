@@ -8,6 +8,7 @@ public class MusicController : MonoBehaviour
 	private static MusicController _instance;
 
 	public AudioClip Music;
+	public AudioClip FinaleMusic;
 
 	private AudioSource _audioSource;
 
@@ -36,6 +37,13 @@ public class MusicController : MonoBehaviour
 
 		DontDestroyOnLoad(gameObject);
     }
+
+	public void PlayFinaleMusic()
+	{
+		_audioSource.Stop();
+		_audioSource.clip = FinaleMusic;
+		_audioSource.Play();
+	}
 
     // Update is called once per frame
     void Update()
