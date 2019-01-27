@@ -141,3 +141,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Music: {fileID: 8300000, guid: 87e95f456d7ab5b4e987068200ec621f, type: 3}
+  FinaleMusic: {fileID: 8300000, guid: 2437d22e15763f2448de38048d2d4473, type: 3}
