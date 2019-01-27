@@ -134,6 +134,10 @@ public class GameLogic : MonoBehaviour {
             }
             case GameState.JAIL_VISIT: {
                 keysVisible = false;
+                GameObject keys = Array.Find(activeNPCs, g => g.name == "Keys");
+                if (keys != null) {
+                    keys.SetActive(false);
+                }
                 GameState = GameState.TOUGHBALL_TALK;
                 break;
             }
