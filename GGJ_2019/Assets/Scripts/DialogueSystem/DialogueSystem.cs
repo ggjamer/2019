@@ -20,9 +20,13 @@ public class DialogueSystem : MonoBehaviour
 	private string _characterAName, _characterBName;
 	private Tweener _alphaTween;
 
+	public Sprite Transparent;
+
 	private bool pause;
 
 	public bool finished = true;
+	public bool finalDialogue = false;
+
 
 	private void Start()
 	{
@@ -37,7 +41,10 @@ public class DialogueSystem : MonoBehaviour
 		if (!Input.GetButtonDown("Jump") || pause) return;
 		if (_currentLine >= _dialogue.Length)
 		{
-
+			if(!finalDialogue)
+			{
+				StartCoroutine(TransparentSprite());
+			}
 			Debug.Log("ending dialogue");
 
 			TextCanvas.DOFade(0, OpeningAnimationDuration);
@@ -72,6 +79,7 @@ public class DialogueSystem : MonoBehaviour
 	{
 		LeftCharacterImage.FinaleActive = true;
 		RightCharacterImage.FinaleActive = true;
+		finalDialogue = true;
 
 	}
 
@@ -117,6 +125,13 @@ public class DialogueSystem : MonoBehaviour
 			DialogueText.text += t;
 		}
 		pause = false;
+	}
+
+	private IEnumerator TransparentSprite()
+	{
+		yield return new WaitForSeconds(1.0f);
+		LeftCharacterImage._image.sprite = Transparent;
+
 	}
 
 	private Sprite GetPortraitForCharacter(string characterName)
