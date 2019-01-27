@@ -26,4 +26,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Rooms/PoliceStation.unity
     guid: a9009b88a85bd7e35a4020b1705cbb0e
+  - enabled: 1
+    path: Assets/Scenes/EndScene.unity
+    guid: ca84c51415b441aeabfba6abeff1c3b0
+  - enabled: 1
+    path: Assets/Scenes/Rooms/Finale.unity
+    guid: 65d0f669815f9ac19ad83618bd4a63fd
   m_configObjects: {}

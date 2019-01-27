@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour{
     private string _name;
@@ -57,6 +58,9 @@ public class Player : MonoBehaviour{
 
         if(_houseInRange && Input.GetButtonDown("Jump"))
         {
+            if (GameLogic.Instance.GameState == GameState.FINALE && _houseInRange.location == Locations.CHURCH) {
+                SceneManager.LoadScene("Finale");
+            }
             GameLogic.Instance.PlayerPosition = gameObject.transform.position;
             _houseInRange.LoadScene();
         }

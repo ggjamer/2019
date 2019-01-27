@@ -22,6 +22,8 @@ public class DialogueSystem : MonoBehaviour
 
     private bool pause;
 
+    public bool finished = true;
+
     private void Start()
     {
         TextCanvas.alpha = 0;
@@ -54,6 +56,7 @@ public class DialogueSystem : MonoBehaviour
 
                 _do = null;
                 _dialogue = null;
+                finished = true;
             } else {
                 PlayNextLine();
             
@@ -64,6 +67,7 @@ public class DialogueSystem : MonoBehaviour
     public void StartDialogue(DialogueObject diag)
 	{
         Debug.Log("Starting dialogue");
+        finished = false;
         _do = diag;
         _dialogue = diag.diaglogue;
         _characterAName = diag.PersonA == "You" ? GameLogic.Instance.playerName : diag.PersonA;
