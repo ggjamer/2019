@@ -61,6 +61,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6447b2865c89741e1921571143f7fd42, type: 2}
   - {fileID: 11400000, guid: 0d7ce6de79902537fa05bedad4e2ca1d, type: 2}
   Location: 1
+  playerVisible: 1
   CameraPosition: {x: 0, y: 0, z: 0}
   Zoom: 0
   dialogueSystemObj: {fileID: 6692980439571663925, guid: bc719d8607bdcee449549c41449b8a12,
@@ -107,6 +108,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b623f3b35b41f8a5b9f9469dc5c4f2c1, type: 2}
   - {fileID: 11400000, guid: 340b5fc865c021cd194a48266b2e0a30, type: 2}
   - {fileID: 11400000, guid: a59ca917749b5c1cf9ec721e9d2444fc, type: 2}
-  finaleDialogues: []
+  finaleDialogues:
+  - {fileID: 11400000, guid: 8aad66df5d82df44fb7914187f4b1be9, type: 2}
+  - {fileID: 11400000, guid: f93ec55f708b4b011a182d0fafe135a8, type: 2}
   dialogueIndex: 0
   dialogueActive: 0
