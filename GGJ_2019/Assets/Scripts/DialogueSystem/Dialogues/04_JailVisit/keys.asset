@@ -19,7 +19,7 @@ MonoBehaviour:
   PersonA: You
   PersonAImage: {fileID: 0}
   PersonB: Keys
-  PersonBImage: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  PersonBImage: {fileID: 21300000, guid: f968e842e5f871ad0b52bd1a8264a082, type: 3}
   diaglogue:
   - Nice, I found the keys!
   - (Jingling)
