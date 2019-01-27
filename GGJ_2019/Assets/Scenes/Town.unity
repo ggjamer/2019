@@ -676,7 +676,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actorType: 14
   currentDialogue: {fileID: 0}
-  activationDistance: 0
+  activationDistance: 5
 --- !u!212 &594484933
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -771,7 +771,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actorType: 4
   currentDialogue: {fileID: 0}
-  activationDistance: 0
+  activationDistance: 5
 --- !u!212 &679129931
 SpriteRenderer:
   m_ObjectHideFlags: 0
