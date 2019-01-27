@@ -36,6 +36,7 @@ public class GameLogic : MonoBehaviour {
     public StateInfo[] StateInfos;
     public Locations Location;
     private bool keysVisible = true;
+    public bool playerVisible = true;
     
     // Camera Infos
     public Vector3 CameraPosition;
@@ -62,11 +63,13 @@ public class GameLogic : MonoBehaviour {
 
     void init(Scene scene, LoadSceneMode mode) {
         // Create Player
-        player = Instantiate(playerObj);
-        _playerBehaviour = player.GetComponent<Player>();
-        _playerBehaviour.SetParams(playerName, animatorController);
-        _playerBehaviour.Init();
-        
+        if (playerVisible) {
+            player = Instantiate(playerObj);
+            _playerBehaviour = player.GetComponent<Player>();
+            _playerBehaviour.SetParams(playerName, animatorController);
+            _playerBehaviour.Init();
+        }
+
         //Create NPCs
         activeNPCs = GameObject.FindGameObjectsWithTag("NPC");
         if (!keysVisible) {

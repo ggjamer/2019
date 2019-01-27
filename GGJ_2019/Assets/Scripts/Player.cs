@@ -59,6 +59,7 @@ public class Player : MonoBehaviour{
         if(_houseInRange && Input.GetButtonDown("Jump"))
         {
             if (GameLogic.Instance.GameState == GameState.FINALE && _houseInRange.location == Locations.CHURCH) {
+                GameLogic.Instance.playerVisible = false;
                 SceneManager.LoadScene("Finale");
             }
             GameLogic.Instance.PlayerPosition = gameObject.transform.position;
