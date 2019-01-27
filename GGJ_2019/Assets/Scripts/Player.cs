@@ -50,6 +50,9 @@ public class Player : MonoBehaviour{
         }else if (Input.GetAxis("Horizontal") < 0){
             transform.localScale = new Vector3(-1,1,1);
             GetComponent<Animator>().SetBool("walking", true);
+        }else if (Input.GetAxis("Vertical") != 0)
+        {
+            GetComponent<Animator>().SetBool("walking", true);
         }
         else
         {
