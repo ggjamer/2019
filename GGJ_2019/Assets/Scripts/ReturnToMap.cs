@@ -17,9 +17,8 @@ public class ReturnToMap : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButton("Jump"))
+        if(Input.GetButton("Cancel"))
 		{
-			//SceneManager.LoadScene("Tranquil_Fenja");
 			GameLogic.Instance.Location = Locations.OUTSIDE;
 			SceneManager.LoadScene(_mapName);
 		}

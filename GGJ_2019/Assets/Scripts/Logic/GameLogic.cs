@@ -29,7 +29,7 @@ public class GameLogic : MonoBehaviour {
     public Vector3 PlayerPosition;
     
     //NPC Infos
-    private List<GameObject> activeNPCs = new List<GameObject>();
+    private List<GameObject> activeNPCs;
     
     // Game State infos
     public GameState GameState;
@@ -67,6 +67,7 @@ public class GameLogic : MonoBehaviour {
         _playerBehaviour.Init();
         
         //Create NPCs
+        activeNPCs = new List<GameObject>();
         List<ActorTypes> npcs = GetPeopleAtLocation(Location);
         foreach (ActorTypes npc in npcs) {
             CreateNPC(npc);
@@ -192,5 +193,17 @@ public class GameLogic : MonoBehaviour {
     public void NextGameState() {
         GameState = GameState++;
         dialogueIndex = 1;
+        foreach (GameObject npc in activeNPCs) {
+            NPC npcBehaviour = npc.GetComponent<NPC>();
+            npcBehaviour.currentDialogue = GetCurrentDialogue(npcBehaviour.actorType,  dialogueIndex);
+        }
+    }
+
+    public void IncreaseDialogueIndex() {
+        dialogueIndex++;
+        foreach (GameObject npc in activeNPCs) {
+            NPC npcBehaviour = npc.GetComponent<NPC>();
+            npcBehaviour.currentDialogue = GetCurrentDialogue(npcBehaviour.actorType,  dialogueIndex);
+        }
     }
 }

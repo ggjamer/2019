@@ -17,7 +17,7 @@ public class NPC : MonoBehaviour, Interactible {
     }
 
     public bool IsInteractible() {
-        return true;
+        return currentDialogue != null;
     }
 
     public void Dialogue() {

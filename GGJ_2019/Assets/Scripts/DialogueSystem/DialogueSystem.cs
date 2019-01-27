@@ -15,6 +15,7 @@ public class DialogueSystem : MonoBehaviour
 
     private int _currentLine;
     private string[] _dialogue;
+    private DialogueObject _do;
     private bool _characterASpeaking;
     private string _characterAName, _characterBName;
     private Tweener _alphaTween;
@@ -32,26 +33,30 @@ public class DialogueSystem : MonoBehaviour
 
 
         if (!Input.GetButtonDown("Jump") || pause) return;
-        if (_currentLine == -1)
-        {
-            Debug.Log("ending dialogue");
-
-            TextCanvas.DOFade(0, OpeningAnimationDuration);
-            
-            GameLogic.Instance.dialogueActive = false;
-            LeftCharacterImage.ToggleCharacter(OpeningAnimationDuration);
-            RightCharacterImage.ToggleCharacter(OpeningAnimationDuration);
-
-            _dialogue = null;
-        }
-        else
-        {
-            PlayNextLine();
-            if (_currentLine >= _dialogue.Length)
+        if (_currentLine >= _dialogue.Length)
             {
-                Debug.Log("Dialogue ended");
-                _currentLine = -1;
-            }
+                Debug.Log("ending dialogue");
+
+                TextCanvas.DOFade(0, OpeningAnimationDuration);
+            
+                GameLogic.Instance.dialogueActive = false;
+                LeftCharacterImage.ToggleCharacter(OpeningAnimationDuration);
+                RightCharacterImage.ToggleCharacter(OpeningAnimationDuration);
+            
+                // Actualize Game State
+                if (_do.fireIndex) {
+                    GameLogic.Instance.IncreaseDialogueIndex();
+                }
+
+                if (_do.fireState) {
+                    GameLogic.Instance.NextGameState();
+                }
+
+                _do = null;
+                _dialogue = null;
+            } else {
+                PlayNextLine();
+            
         }
     }
 
@@ -59,6 +64,7 @@ public class DialogueSystem : MonoBehaviour
     public void StartDialogue(DialogueObject diag)
 	{
         Debug.Log("Starting dialogue");
+        _do = diag;
         _dialogue = diag.diaglogue;
         _characterAName = diag.PersonA == "You" ? GameLogic.Instance.playerName : diag.PersonA;
         _characterBName = diag.PersonB == "You" ? GameLogic.Instance.playerName : diag.PersonB;
@@ -73,14 +79,7 @@ public class DialogueSystem : MonoBehaviour
         _characterASpeaking = true;
         PlayNextLine();
         
-        // Actualize Game State
-        /*if (diag.fireIndex) {
-            GameLogic.Instance.dialogueIndex++;
-        }
-
-        if (diag.fireState) {
-            GameLogic.Instance.NextGameState();
-        }*/
+        
     }
 
     private void PlayNextLine()

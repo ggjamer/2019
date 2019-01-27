@@ -46,7 +46,9 @@ MonoBehaviour:
   initScene: Town
   playerObj: {fileID: 8333931549320749573, guid: 3a6f0e62f2ee36149b4f014bc018517c,
     type: 3}
+  player: {fileID: 0}
   playerName: 
+  playerSprite: {fileID: 0}
   animatorController: {fileID: 0}
   PlayerPosition: {x: 0, y: 0, z: 0}
   GameState: 0
@@ -63,7 +65,6 @@ MonoBehaviour:
   Zoom: 0
   dialogueSystemObj: {fileID: 6692980439571663925, guid: bc719d8607bdcee449549c41449b8a12,
     type: 3}
-  DialogueSystem: {fileID: 0}
   newInTownDialogues:
   - {fileID: 11400000, guid: 8951eedccbf14511baffb07fca883bb8, type: 2}
   - {fileID: 11400000, guid: c898a6dc74f784115a6e125c5eb3a69d, type: 2}
@@ -73,6 +74,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f3fba69a6819915c29ccf2145d08beb9, type: 2}
   - {fileID: 11400000, guid: b7176da327758995db887a2d47539958, type: 2}
   - {fileID: 11400000, guid: 6e6d8c931962a915095688e206664c26, type: 2}
+  - {fileID: 11400000, guid: ff6f1e573f080c095837b1b6936e3587, type: 2}
+  - {fileID: 11400000, guid: bbfe2c3a4157f82a6af5622f3b292fb1, type: 2}
   scandalDialogues: []
   mayorsPermissionDialogues: []
   jailVisitDialogues: []
@@ -80,3 +83,4 @@ MonoBehaviour:
   coffeeBreakDialogues: []
   finaleDialogues: []
   dialogueIndex: 0
+  dialogueActive: 0
