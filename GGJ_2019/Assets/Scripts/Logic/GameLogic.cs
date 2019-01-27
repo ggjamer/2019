@@ -35,6 +35,7 @@ public class GameLogic : MonoBehaviour {
     public GameState GameState;
     public StateInfo[] StateInfos;
     public Locations Location;
+    private bool keysVisible = true;
     
     // Camera Infos
     public Vector3 CameraPosition;
@@ -68,6 +69,12 @@ public class GameLogic : MonoBehaviour {
         
         //Create NPCs
         activeNPCs = GameObject.FindGameObjectsWithTag("NPC");
+        if (!keysVisible) {
+            GameObject keys = Array.Find(activeNPCs, g => g.name == "Keys");
+            if (keys != null) {
+                keys.SetActive(false);
+            }
+        }
         ActualizeDialogues();
     }
 
@@ -123,6 +130,7 @@ public class GameLogic : MonoBehaviour {
                 break;
             }
             case GameState.JAIL_VISIT: {
+                keysVisible = false;
                 GameState = GameState.TOUGHBALL_TALK;
                 break;
             }
