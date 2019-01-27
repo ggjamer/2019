@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tranquil</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Passion+One" rel="stylesheet">
+        <style>
+            body, html {
+                background: rgba(200,200,200,1);
+                margin: 0;
+                padding: 0;
+                border: 0;
+                font-family: 'Roboto', sans-serif;
+            }
+            body {
+                display: grid;
+                grid-template-columns: 1fr minmax(50em, 80em) 1fr;
+            }
+            section {
+                grid-column: 2 / 2;
+            }
+            h1 {
+                grid-column: 1 / -1;
+                text-align: center;
+            }
+            .game img {
+                width: 100%;
+                border-radius: .5em;
+                border-top-right-radius: 0;
+                border-top-left-radius: 0;
+            }
+            .gametext {
+                width: 70%;
+                display: block;
+                margin: 15%;
+                margin-top: 1em;
+                margin-bottom: 0;
+                font-size: 1.7em;
+            }
+            section {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-gap: 1em;
+                padding: 1em; 
+            }
+            section article {
+                border-radius: .5em;
+                background: white;
+                padding: 1em;
+                min-height: 10em;
+
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            }
+            section.game {
+                grid-template-columns: 1fr;
+                padding-top: 0;
+            }
+
+            section > .full {
+                grid-column: 1 / -1;
+            }
+
+            .quote {
+                padding-left: 1em;
+                color: rgba(150,150,150,1);
+            }
+
+            .quote:before {
+                content: '"';
+                font-family: 'Passion One', cursive;
+            }
+            .quote:before {
+                font-size: 3em;
+                font-weight: 1em;
+            }
+            .quote_small {
+                padding-left: 3em;
+                color: rgba(150,150,150,1);
+            }
+            .quote_small:before {
+                font-size: 2.5em;
+                font-weight: .8em;
+            }
+            .whatHaveIdone {
+                text-align: center;
+                padding-left: 2em;
+            }
+
+            a {
+                text-decoration: underline;
+                color: black;
+            }
+
+            img {
+               /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
+            }
+
+            .challanges p,
+            .challanges span {
+                padding-left: 1.3em;
+            }
+        </style>
+    </head>
+    <body>
+        <section class="game">
+            <img src="./Tranquil.jpg">
+
+            <span class="gametext">
+                There's unrest in your hometown Woodbridge. As only reasonable resident it's your job to settle disputes and restore the peaceful atmosphere. After all - what's a home without harmony?
+            </span>
+
+            <article class="challanges" style="width: 70%; margin: auto;">
+                <h3>Challenges</h3>
+                <p>
+                    <b>Forgive and Fortify</b>(Sponsored by iThrive Games)<br/>
+                    <span>Create a game that explores how forgiveness strengthens those who practice it.</span>
+                </p>
+                <p>
+                    <b>Use the Source, Luke</b>(Sponsored by Github)<br/>
+                    <span>Use one or more open source tools, game engines or libraries in your game (and thank them in in the Technology Notes section on the submission page).</span>
+                </p>
+                <p>
+                    <b>Keep it simple</b><br/>
+                    <span>Make your game playable by people who can use no more than a D-pad plus 2 buttons, with hardware like an Xbox Adaptive Controller in mind.</span>
+                </p>
+                <p>
+                    <b>Super Secret Stash</b><br/>
+                    <span>Feature a hidden room within your game.</span>
+                </p>
+            </article>
+        </section>
+        <section class="team">
+            <h1>Team</h1>
+            <div class="full" style="display: flex; justify-content: center;">
+                <div style="
+                    background: white;
+                    display: inline;
+                    float: left;
+                    margin: 0 15px 30px;
+                    padding: 10px 10px 25px;
+                    text-align: center;
+                    text-decoration: none;
+                    -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+                    -moz-box-shadow: 0 4px 6px rgba(0,0,0,.3);
+                    box-shadow: 0 4px 6px rgba(0,0,0,.3);
+                    -webkit-transition: all .15s linear;
+                    -moz-transition: all .15s linear;
+                    transition: all .15s linear;
+                    z-index:0;
+                position:relative;
+                    ">
+                        <img src="./JAFRYL.jpg" style="filter: sepia(.6);" /><br/>
+                        <br/>
+                        <b>J A F R Y L</b>
+                    </div>
+                </div>
+            <article>
+                <h1>Jeffrey Bissel</h1>
+                <span class="quote"></span>
+                <!--
+                    <br/>
+                    <span class="quote_small"></span>
+                -->
+                <br/>
+                <span class="whatHaveIdone">Animations, Website</span>
+            </article>
+            <article>
+                <h1>Annika Jennsen</h1>
+                <span class="quote">Hast du auch Knüppelprobleme?</span>
+                    <br/>
+                    <span class="quote_small">Ich hab drei Eierprobleme - Yannis</span>
+                <br/>
+                <span class="whatHaveIdone">Plot, Character and World Design</span>
+            </article>
+            <article>
+                <h1>Fenja Kollasch</h1>
+                <span class="quote">Ich bin die Königin der Merge konflikte!</span>
+                <br/>
+                <span class="whatHaveIdone">Plot, Story, Dialogs, general Programming</span>
+            </article>
+            <article>
+                <h1>Robert Stenzel</h1>
+                <span class="quote"></span>
+                <br/>
+                <span class="whatHaveIdone">Camera, Map/Collision, Dialogsystem, general Programming</span>
+            </article>
+            <article>
+                <h1>Yannis Rohloff</h1>
+                <span class="quote"></span>
+                <br/>
+                <span class="whatHaveIdone">Map/Collision, Animation integration, Movement, general Programming</span>
+            </article>
+            <article>
+                <h1>Luca Nixdorf</h1>
+                <span class="quote">Mein Bauch fühlt sich an als käme da gleich ein Alien Baby raus 😔</span>
+                <br/>
+                <span class="whatHaveIdone">Dialogsystem</span>
+            </article>
+        </section>
+        <section class="special">
+            <article>
+                <h1>Sponsored by</h1>
+                <h2 style="padding-left: 2em;"><a href="https://instagram.com/annimagzombies">AnniMagZombies</a></h2>
+            </article>
+            <article>
+                <h1>Sponsored by</h1>
+                <h2 style="padding-left: 2em;"><a href="https://bissel-art.de">Bissel-Art.de</a></h2>
+            </article>
+            <!--
+                <article>
+                    <h1>Special thanks to ***</h1>
+                    for *** <br/>
+                    Published on ***<br/>
+                    *url*<br/>
+                </article>
+            -->
+        </section>
+        <section>
+            <article><a href="https://globalgamejam.org/2019/games/tranquil">https://globalgamejam.org/2019/games/tranquil</a></article>
+            <article><a href="https://github.com/ggjamer/2019/">https://github.com/ggjamer/2019/</a></article>
+        </section>
+    </body>
+</html>
