@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3110bbe428af79940b9b2041390d6eca, type: 3}
+  m_Name: bar_01
+  m_EditorClassIdentifier: 
+  actorIdentifier: 5
+  index: 2
+  fireIndex: 1
+  fireState: 0
+  PersonA: You
+  PersonAImage: {fileID: 0}
+  PersonB: Weird dude at the bar
+  PersonBImage: {fileID: 21300000, guid: 22b1a6950f267df0984268eb5b505b75, type: 3}
+  diaglogue:
+  - Dum, dum, dum, cleaning the dishes...
+  - You missed a spot there, kiddo.
+  - '...'
+  - Haven't you hear me? I said you missed a spot.
+  - Could you please just let me work?
+  - Hey, just trying to support you here. But if you don't like me to do dso... fine.
+    You're just as ungrateful as everyone else in this village...
+  - '...'

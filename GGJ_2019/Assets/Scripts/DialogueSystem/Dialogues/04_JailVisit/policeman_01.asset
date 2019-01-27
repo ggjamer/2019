@@ -10,18 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3110bbe428af79940b9b2041390d6eca, type: 3}
-  m_Name: priest_01
+  m_Name: policeman_01
   m_EditorClassIdentifier: 
-  actorIdentifier: 13
-  index: 0
-  fireIndex: 0
+  actorIdentifier: 9
+  index: 1
+  fireIndex: 1
   fireState: 0
   PersonA: You
   PersonAImage: {fileID: 0}
-  PersonB: Priest
-  PersonBImage: {fileID: 21300000, guid: eb377f013221945b9ab2a73c3d413f51, type: 3}
+  PersonB: Policeman
+  PersonBImage: {fileID: 21300000, guid: 6d3b64d3ee9538cfbb0151c12cef744d, type: 3}
   diaglogue:
-  - Hi, I'm new here.
-  - Ahh, hello. Sorry, I have stuff to do. What kind of stuff? Priest stuff, you know.
-    Stop being so curious.
-  - Okay, bye.
+  - I need to talk to the prisoner.
+  - So, do you now. And If I don't let you?
+  - It is really important!
+  - Well, that's unlucky though. Unfortunately, I lost the keys. If you find them,
+    I won't stand in your way.

@@ -76,11 +76,37 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6e6d8c931962a915095688e206664c26, type: 2}
   - {fileID: 11400000, guid: ff6f1e573f080c095837b1b6936e3587, type: 2}
   - {fileID: 11400000, guid: bbfe2c3a4157f82a6af5622f3b292fb1, type: 2}
-  scandalDialogues: []
-  mayorsPermissionDialogues: []
-  jailVisitDialogues: []
-  toughballTalkDialogues: []
-  coffeeBreakDialogues: []
+  scandalDialogues:
+  - {fileID: 11400000, guid: db9c157b1f08f6991bcaac03edd420c8, type: 2}
+  - {fileID: 11400000, guid: 3dba4314dc0612ca0b9bf72ddc51e0c1, type: 2}
+  - {fileID: 11400000, guid: 17c937e44bcc4740abfba6cf5ccb47c2, type: 2}
+  - {fileID: 11400000, guid: 8656302e66af4ff2994e39c5602e2597, type: 2}
+  - {fileID: 11400000, guid: d9f77501f375ed207a04dae0bb148f42, type: 2}
+  - {fileID: 11400000, guid: eef54c990b209449f9b0073d2b794474, type: 2}
+  - {fileID: 11400000, guid: 0e8e731c0a4d7235ab0487769ebc522c, type: 2}
+  mayorsPermissionDialogues:
+  - {fileID: 11400000, guid: 0aabc705cf0ec168687c011839862897, type: 2}
+  - {fileID: 11400000, guid: 3e8b818a841a03fb288a84ae8e05c95c, type: 2}
+  - {fileID: 11400000, guid: 7daeff94a0b6600c6a4f7f476cdf2922, type: 2}
+  - {fileID: 11400000, guid: c5ed6d1911042409993fa64c6c1fa06f, type: 2}
+  jailVisitDialogues:
+  - {fileID: 11400000, guid: 26bb283805060388d96144b39a2c10d2, type: 2}
+  - {fileID: 11400000, guid: ebd731b79e2751dfb8ef233ab3f76925, type: 2}
+  - {fileID: 11400000, guid: d84043e499418b15892d2593dde7b3c7, type: 2}
+  - {fileID: 11400000, guid: a3b83dceb8a77c29db36f99abf4c7f5a, type: 2}
+  - {fileID: 11400000, guid: 3f6c09079e5520faca167c23de4313d3, type: 2}
+  - {fileID: 11400000, guid: 2590be06b610f1f839496cc0570b1f61, type: 2}
+  toughballTalkDialogues:
+  - {fileID: 11400000, guid: e3ff3626750809e588bd3d6a0024c28b, type: 2}
+  - {fileID: 11400000, guid: 3427a03ab7cb07e6a9c8e31a8d7077d5, type: 2}
+  coffeeBreakDialogues:
+  - {fileID: 11400000, guid: 4ca8c2ba87c1dd5ffb181f613a313b77, type: 2}
+  - {fileID: 11400000, guid: 914766a27096fe23d886f4b692afa2dc, type: 2}
+  - {fileID: 11400000, guid: 6cf6ee351004e42b5a90138ed28163a5, type: 2}
+  - {fileID: 11400000, guid: 99cdad3fe7e321402a5c1c2e0b371008, type: 2}
+  - {fileID: 11400000, guid: b623f3b35b41f8a5b9f9469dc5c4f2c1, type: 2}
+  - {fileID: 11400000, guid: 340b5fc865c021cd194a48266b2e0a30, type: 2}
+  - {fileID: 11400000, guid: a59ca917749b5c1cf9ec721e9d2444fc, type: 2}
   finaleDialogues: []
   dialogueIndex: 0
   dialogueActive: 0

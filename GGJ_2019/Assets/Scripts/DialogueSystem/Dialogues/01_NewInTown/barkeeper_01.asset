@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3110bbe428af79940b9b2041390d6eca, type: 3}
   m_Name: barkeeper_01
   m_EditorClassIdentifier: 
-  actorIdentifier: 9
+  actorIdentifier: 10
   index: 0
   fireIndex: 0
   fireState: 0

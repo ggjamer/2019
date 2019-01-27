@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3110bbe428af79940b9b2041390d6eca, type: 3}
-  m_Name: innkeeper_02
+  m_Name: barkeeper
   m_EditorClassIdentifier: 
-  actorIdentifier: 11
-  index: 2
+  actorIdentifier: 10
+  index: 0
   fireIndex: 0
   fireState: 0
-  PersonA: Innkeeper
-  PersonAImage: {fileID: 21300000, guid: 0ee367459712f08b5a805384c071228d, type: 3}
+  PersonA: Barkeeper
+  PersonAImage: {fileID: 21300000, guid: 354ab5a5798315569acbd2d9ef16883d, type: 3}
   PersonB: You
   PersonBImage: {fileID: 0}
   diaglogue:
-  - Please get some flour from the store for me, would you be so nice?
+  - Hey there. Have you spoken to the mayor yet?

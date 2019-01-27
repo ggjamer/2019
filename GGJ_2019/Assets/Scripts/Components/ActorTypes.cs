@@ -5,6 +5,7 @@ public enum ActorTypes {
     PEN,
     PAPER,
     COFFEE,
+    BAR,
     MAYOR,
     BOATMAN,
     DADDY,
@@ -12,5 +13,6 @@ public enum ActorTypes {
     BARKEEPER,
     INNKEEPER,
     STOREKEEPER,
-    PRIEST
+    PRIEST,
+    KEYS
 }

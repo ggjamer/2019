@@ -191,7 +191,36 @@ public class GameLogic : MonoBehaviour {
     }
 
     public void NextGameState() {
-        GameState = GameState++;
+        Debug.Log("Switching Game State");
+        switch (GameState) {
+            case GameState.NEW_IN_TOWN: {
+                GameState = GameState.SCANDAL;
+                break;
+            }
+            case GameState.SCANDAL: {
+                GameState = GameState.MAYORS_PERMISSION;
+                break;
+            }
+            case GameState.MAYORS_PERMISSION: {
+                GameState = GameState.JAIL_VISIT;
+                break;
+            }
+            case GameState.JAIL_VISIT: {
+                GameState = GameState.TOUGHBALL_TALK;
+                break;
+            }
+            case GameState.TOUGHBALL_TALK: {
+                GameState = GameState.COFFEE_BREAK;
+                break;
+            }
+            case GameState.COFFEE_BREAK: {
+                GameState = GameState.FINALE;
+                break;
+            }
+            case GameState.FINALE: {
+                return;
+            }
+        }
         dialogueIndex = 1;
         foreach (GameObject npc in activeNPCs) {
             NPC npcBehaviour = npc.GetComponent<NPC>();
