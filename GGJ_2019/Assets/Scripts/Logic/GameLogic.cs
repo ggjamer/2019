@@ -29,7 +29,7 @@ public class GameLogic : MonoBehaviour {
     public Vector3 PlayerPosition;
     
     //NPC Infos
-    private List<GameObject> activeNPCs;
+    private GameObject[] activeNPCs;
     
     // Game State infos
     public GameState GameState;
@@ -67,91 +67,8 @@ public class GameLogic : MonoBehaviour {
         _playerBehaviour.Init();
         
         //Create NPCs
-        activeNPCs = new List<GameObject>();
-        List<ActorTypes> npcs = GetPeopleAtLocation(Location);
-        foreach (ActorTypes npc in npcs) {
-            CreateNPC(npc);
-        }
-    }
-    
-
-    private void CreateNPC(ActorTypes npcType) {
-        GameObject npc;
-        switch (npcType) {
-            case ActorTypes.DADDY: {
-                npc = GameObject.Find("Daddy");
-                break;
-            }
-            case ActorTypes.BOATMAN: {
-                npc = GameObject.Find("Boatman");
-                break;
-            }
-            case ActorTypes.MAYOR: {
-                npc = GameObject.Find("Mayor");
-                break;
-            }
-            case ActorTypes.POLICEMAN: {
-                npc = GameObject.Find("Policeman");
-                break;
-            }
-            case ActorTypes.BARKEEPER: {
-                npc = GameObject.Find("Barkeeper");
-                break;
-            }
-            case ActorTypes.INNKEEPER: {
-                npc = GameObject.Find("Innkeeper");
-                break;
-            }
-            case ActorTypes.STOREKEEPER: {
-                npc = GameObject.Find("Storekeeper");
-                break;
-            }
-            case ActorTypes.PRIEST: {
-                npc = GameObject.Find("Priest");
-                break;
-            }
-            default: {
-                throw new InvalidExpressionException("Invalid NPC Type");
-            }
-        }
-
-        NPC npcBehaviour = npc.GetComponent<NPC>();
-        npcBehaviour.currentDialogue = GetCurrentDialogue(npcType, dialogueIndex);
-        activeNPCs.Add(npc);
-    }
-
-    public List<ActorTypes> GetPeopleAtLocation(Locations location) {
-        List<ActorTypes> results = new List<ActorTypes>();
-        StateInfo stateInfo = StateInfos[(int) GameState];
-        
-        Debug.Log(stateInfo);
-        Debug.Log(location);
-        // This is so ugly :(
-        if (stateInfo.DADDY == location) {
-            results.Add(ActorTypes.DADDY);
-        }
-        if (stateInfo.BOATMAN == location) {
-            results.Add(ActorTypes.BOATMAN);
-        }
-        if (stateInfo.MAYOR == location) {
-            results.Add(ActorTypes.MAYOR);
-        }
-        if (stateInfo.POLICEMAN == location) {
-            results.Add(ActorTypes.POLICEMAN);
-        }
-        if (stateInfo.BARKEEPER == location) {
-            results.Add(ActorTypes.BARKEEPER);
-        }
-        if (stateInfo.INNKEEPER == location) {
-            results.Add(ActorTypes.INNKEEPER);
-        }
-        if (stateInfo.STOREKEEPER == location) {
-            results.Add(ActorTypes.STOREKEEPER);
-        }
-        if (stateInfo.PRIEST == location) {
-            results.Add(ActorTypes.PRIEST);
-        }
-        return results;
+        activeNPCs = GameObject.FindGameObjectsWithTag("NPC");
+        ActualizeDialogues();
     }
 
     public DialogueObject GetCurrentDialogue(ActorTypes id, int idx) {
@@ -222,14 +139,15 @@ public class GameLogic : MonoBehaviour {
             }
         }
         dialogueIndex = 1;
-        foreach (GameObject npc in activeNPCs) {
-            NPC npcBehaviour = npc.GetComponent<NPC>();
-            npcBehaviour.currentDialogue = GetCurrentDialogue(npcBehaviour.actorType,  dialogueIndex);
-        }
+        ActualizeDialogues();
     }
 
     public void IncreaseDialogueIndex() {
         dialogueIndex++;
+        ActualizeDialogues();
+    }
+
+    public void ActualizeDialogues() {
         foreach (GameObject npc in activeNPCs) {
             NPC npcBehaviour = npc.GetComponent<NPC>();
             npcBehaviour.currentDialogue = GetCurrentDialogue(npcBehaviour.actorType,  dialogueIndex);
