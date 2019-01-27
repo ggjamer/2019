@@ -14,7 +14,6 @@ public class Menu : MonoBehaviour
     void Start()
     {
         menuInteraction.AddText(1, "Continue", Continue);
-        menuInteraction.AddText(1, "Quit to Windows", Quit);
     }
    
     public void StartGame(string level)
