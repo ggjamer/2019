@@ -47,6 +47,7 @@ public class CharacterCreation : MonoBehaviour {
             DontDestroyOnLoad(logicObj);
             GameLogic logic = logicObj.GetComponent<GameLogic>();
             logic.playerName = _nameInput.text;
+            logic.playerSprite = preview.sprite;
             logic.animatorController = animatorController;
         
             SceneManager.LoadScene(logic.initScene);

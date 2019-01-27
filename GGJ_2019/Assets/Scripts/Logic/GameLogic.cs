@@ -21,8 +21,9 @@ public class GameLogic : MonoBehaviour {
 
     // Player Infos
     public GameObject playerObj;
-    private GameObject player;
+    public GameObject player;
     public string playerName;
+    public Sprite playerSprite;
     public RuntimeAnimatorController animatorController;
     private Player _playerBehaviour;
     public Vector3 PlayerPosition;
@@ -41,7 +42,6 @@ public class GameLogic : MonoBehaviour {
 
     // Dialogue Handling
     public GameObject dialogueSystemObj;
-    public DialogueSystem DialogueSystem;
     public DialogueObject[] newInTownDialogues;
     public DialogueObject[] scandalDialogues;
     public DialogueObject[] mayorsPermissionDialogues;
@@ -49,13 +49,13 @@ public class GameLogic : MonoBehaviour {
     public DialogueObject[] toughballTalkDialogues;
     public DialogueObject[] coffeeBreakDialogues;
     public DialogueObject[] finaleDialogues;
-    private int dialogueIndex;
+    public int dialogueIndex;
+    public bool dialogueActive;
     
     void Awake() {
         _instance = this;
         SceneManager.sceneLoaded += init;
         GameState = GameState.NEW_IN_TOWN;
-        DialogueSystem = dialogueSystemObj.GetComponent<DialogueSystem>();
         dialogueIndex = 1;
     }
 
@@ -187,5 +187,10 @@ public class GameLogic : MonoBehaviour {
         }
 
         return Array.Find<DialogueObject>(array, d => d.actorIdentifier == id && (d.index == 0 || d.index == idx));
+    }
+
+    public void NextGameState() {
+        GameState = GameState++;
+        dialogueIndex = 1;
     }
 }

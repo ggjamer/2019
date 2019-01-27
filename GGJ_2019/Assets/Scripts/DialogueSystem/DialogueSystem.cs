@@ -19,6 +19,8 @@ public class DialogueSystem : MonoBehaviour
     private string _characterAName, _characterBName;
     private Tweener _alphaTween;
 
+    private bool pause;
+
     private void Start()
     {
         TextCanvas.alpha = 0;
@@ -29,13 +31,14 @@ public class DialogueSystem : MonoBehaviour
         if (_dialogue == null) return;
 
 
-        if (!Input.GetButtonDown("Fire1")) return;
+        if (!Input.GetButtonDown("Jump") || pause) return;
         if (_currentLine == -1)
         {
             Debug.Log("ending dialogue");
 
             TextCanvas.DOFade(0, OpeningAnimationDuration);
-
+            
+            GameLogic.Instance.dialogueActive = false;
             LeftCharacterImage.ToggleCharacter(OpeningAnimationDuration);
             RightCharacterImage.ToggleCharacter(OpeningAnimationDuration);
 
@@ -57,10 +60,10 @@ public class DialogueSystem : MonoBehaviour
 	{
         Debug.Log("Starting dialogue");
         _dialogue = diag.diaglogue;
-        _characterAName = diag.PersonA;
-        _characterBName = diag.PersonB;
-		RightCharacterImage._image.sprite = diag.PersonAImage; // sorry luca
-		LeftCharacterImage._image.sprite = diag.PersonBImage; // sorry luca
+        _characterAName = diag.PersonA == "You" ? GameLogic.Instance.playerName : diag.PersonA;
+        _characterBName = diag.PersonB == "You" ? GameLogic.Instance.playerName : diag.PersonB;
+		RightCharacterImage._image.sprite = diag.PersonAImage == null ? GameLogic.Instance.playerSprite : diag.PersonAImage; // sorry luca
+		LeftCharacterImage._image.sprite = diag.PersonBImage == null ? GameLogic.Instance.playerSprite : diag.PersonBImage; // sorry luca
 		LeftCharacterImage.ToggleCharacter(OpeningAnimationDuration, GetPortraitForCharacter(diag.PersonA));
 		RightCharacterImage.ToggleCharacter(OpeningAnimationDuration, GetPortraitForCharacter(diag.PersonB));
 
@@ -69,6 +72,15 @@ public class DialogueSystem : MonoBehaviour
         _currentLine = 0;
         _characterASpeaking = true;
         PlayNextLine();
+        
+        // Actualize Game State
+        /*if (diag.fireIndex) {
+            GameLogic.Instance.dialogueIndex++;
+        }
+
+        if (diag.fireState) {
+            GameLogic.Instance.NextGameState();
+        }*/
     }
 
     private void PlayNextLine()
@@ -80,18 +92,20 @@ public class DialogueSystem : MonoBehaviour
         _characterASpeaking = !_characterASpeaking;
     }
 
-    private IEnumerator PlayText(string text)
-    {
+    private IEnumerator PlayText(string text) {
+        pause = true;
         DialogueText.text = "";
         foreach (char t in text)
         {
             yield return new WaitForSeconds(0.01f);
             DialogueText.text += t;
         }
+        pause = false;
     }
 
     private Sprite GetPortraitForCharacter(string characterName)
     {
         return null;
     }
+
 }

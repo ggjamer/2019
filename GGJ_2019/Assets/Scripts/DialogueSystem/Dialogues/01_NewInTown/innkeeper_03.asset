@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3110bbe428af79940b9b2041390d6eca, type: 3}
+  m_Name: innkeeper_03
+  m_EditorClassIdentifier: 
+  actorIdentifier: 10
+  index: 3
+  fireIndex: 0
+  fireState: 1
+  PersonA: Innkeeper
+  PersonAImage: {fileID: 21300000, guid: 0ee367459712f08b5a805384c071228d, type: 3}
+  PersonB: You
+  PersonBImage: {fileID: 0}
+  diaglogue:
+  - There you are. And I see you got the flour I asked for. Great. Have you met the
+    Storekeeper?
+  - Yes. She is really pretty.
+  - "She surely is. Yet a bit\u2026 well\u2026 simple. And she talks so much about
+    her father. I think he passed away last year. At least noone has seen him since
+    then. But it\u2019s clear that his daughter truly misses him. Poor thing. Her
+    frustration may be the reason why she got hooked in this nasty affair\u2026"
+  - Nasty affair?
+  - "Yeah, it\u2019s a pretty ugly story. Apparently, the storekeeper was messing
+    around with with the priest. Just imagine. The priest. You can guess that her
+    boyfriend, the Boatman,  was not amused when he found out.\n"
+  - 'How did he found out?
+
+'
+  - "Oh\u2026 Well\u2026 I mean\u2026 uhhm\u2026 Maybe I dropped a word or two in
+    front of my husband\u2026 who maybe told the Boatman since he\u2019s his best
+    friend\u2026 Yeah, I know. I should have kept this for myself. But I can\u2019t
+    help it, how could I keep a secret in front of my husband?"
+  - Sure. I can relate to this.
+  - "Really? Oh that\u2019s so good to hear. I\u2019m glad we had the opportunity
+    to chat. Are you done with the pie? No please, it\u2019s on the house. Really,
+    it would be my pleasure. Was it good, though?\n"
+  - 'It was delicious. Thanks and goodbye.
+
+'
+  - Goodbye. Take care, sweety.

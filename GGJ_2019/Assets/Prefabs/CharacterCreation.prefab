@@ -47,8 +47,8 @@ MonoBehaviour:
     type: 3}
   nameInputObj: {fileID: 0}
   genderInputObj: {fileID: 0}
-  maleSprite: {fileID: 21300000, guid: a637919e71701f7a9bed027cfc8e90b1, type: 3}
-  femaleSprite: {fileID: 21300000, guid: 9604f12090fecc006b72ed68c48426ea, type: 3}
+  maleSprite: {fileID: 21300000, guid: 49b7389d83be99da4979c1176b661823, type: 3}
+  femaleSprite: {fileID: 21300000, guid: 79cec41005f231cfc8e602116f2d5d9a, type: 3}
   maleAnimatorController: {fileID: 9100000, guid: 1be52a0a3210c1e1db61b1e698336955,
     type: 2}
   femaleAnmiController: {fileID: 9100000, guid: ba3c605867b4fde1ebc66c886b063b79,

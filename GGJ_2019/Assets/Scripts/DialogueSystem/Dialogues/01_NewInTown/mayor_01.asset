@@ -12,10 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3110bbe428af79940b9b2041390d6eca, type: 3}
   m_Name: mayor_01
   m_EditorClassIdentifier: 
-  PersonA: 
+  actorIdentifier: 5
+  index: 0
+  fireIndex: 0
+  fireState: 0
+  PersonA: You
   PersonAImage: {fileID: 0}
   PersonB: Mayor
-  PersonBImage: {fileID: 0}
+  PersonBImage: {fileID: 21300000, guid: 13ca5cd28fb0ac868b78e3327f159519, type: 3}
   diaglogue:
   - Hi, I'm new here.
   - "Welcome to our beautiful town. I admit, we have some issues to address right

@@ -12,10 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3110bbe428af79940b9b2041390d6eca, type: 3}
   m_Name: innkeeper_01
   m_EditorClassIdentifier: 
-  PersonA: 
+  actorIdentifier: 10
+  index: 1
+  fireIndex: 1
+  fireState: 0
+  PersonA: You
   PersonAImage: {fileID: 0}
   PersonB: Innkeeper
-  PersonBImage: {fileID: 0}
+  PersonBImage: {fileID: 21300000, guid: 0ee367459712f08b5a805384c071228d, type: 3}
   diaglogue:
   - Hi, I'm new here.
   - "Really? Wonderful! It is so great to finally see new face over here. Welcome,

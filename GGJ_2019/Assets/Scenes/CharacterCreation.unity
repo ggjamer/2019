@@ -1047,7 +1047,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 265, y: -17}
-  m_SizeDelta: {x: 150, y: 300}
+  m_SizeDelta: {x: 300, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1053229942
 MonoBehaviour:
@@ -2415,6 +2415,68 @@ PrefabInstance:
       propertyPath: m_Name
       value: CharacterCreation
       objectReference: {fileID: 0}
+    - target: {fileID: 1493585714848782112, guid: 04f224b5c3a75a9ac8472a8993b41726,
+        type: 3}
+      propertyPath: nameInputObj
+      value: 
+      objectReference: {fileID: 70922799}
+    - target: {fileID: 1493585714848782112, guid: 04f224b5c3a75a9ac8472a8993b41726,
+        type: 3}
+      propertyPath: genderInputObj
+      value: 
+      objectReference: {fileID: 1218163316}
+    - target: {fileID: 1493585714848782112, guid: 04f224b5c3a75a9ac8472a8993b41726,
+        type: 3}
+      propertyPath: preview
+      value: 
+      objectReference: {fileID: 1053229942}
+    - target: {fileID: 1493585714848782112, guid: 04f224b5c3a75a9ac8472a8993b41726,
+        type: 3}
+      propertyPath: maleAnimatorController
+      value: 
+      objectReference: {fileID: 9100000, guid: 1be52a0a3210c1e1db61b1e698336955, type: 2}
+    - target: {fileID: 1493585714848782112, guid: 04f224b5c3a75a9ac8472a8993b41726,
+        type: 3}
+      propertyPath: femaleAnmiController
+      value: 
+      objectReference: {fileID: 9100000, guid: ba3c605867b4fde1ebc66c886b063b79, type: 2}
+    - target: {fileID: 1493585714848782112, guid: 04f224b5c3a75a9ac8472a8993b41726,
+        type: 3}
+      propertyPath: maleSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 79cec41005f231cfc8e602116f2d5d9a,
+        type: 3}
+    - target: {fileID: 1493585714848782112, guid: 04f224b5c3a75a9ac8472a8993b41726,
+        type: 3}
+      propertyPath: femaleSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 49b7389d83be99da4979c1176b661823,
+        type: 3}
+    - target: {fileID: 1493585714848782112, guid: 04f224b5c3a75a9ac8472a8993b41726,
+        type: 3}
+      propertyPath: nameInputObj
+      value: 
+      objectReference: {fileID: 70922799}
+    - target: {fileID: 1493585714848782112, guid: 04f224b5c3a75a9ac8472a8993b41726,
+        type: 3}
+      propertyPath: genderInputObj
+      value: 
+      objectReference: {fileID: 1218163316}
+    - target: {fileID: 1493585714848782112, guid: 04f224b5c3a75a9ac8472a8993b41726,
+        type: 3}
+      propertyPath: preview
+      value: 
+      objectReference: {fileID: 1053229942}
+    - target: {fileID: 1493585714848782112, guid: 04f224b5c3a75a9ac8472a8993b41726,
+        type: 3}
+      propertyPath: maleAnimatorController
+      value: 
+      objectReference: {fileID: 9100000, guid: 1be52a0a3210c1e1db61b1e698336955, type: 2}
+    - target: {fileID: 1493585714848782112, guid: 04f224b5c3a75a9ac8472a8993b41726,
+        type: 3}
+      propertyPath: femaleAnmiController
+      value: 
+      objectReference: {fileID: 9100000, guid: ba3c605867b4fde1ebc66c886b063b79, type: 2}
     - target: {fileID: 1493585714848782113, guid: 04f224b5c3a75a9ac8472a8993b41726,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2470,67 +2532,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1493585714848782112, guid: 04f224b5c3a75a9ac8472a8993b41726,
-        type: 3}
-      propertyPath: nameInputObj
-      value: 
-      objectReference: {fileID: 70922799}
-    - target: {fileID: 1493585714848782112, guid: 04f224b5c3a75a9ac8472a8993b41726,
-        type: 3}
-      propertyPath: genderInputObj
-      value: 
-      objectReference: {fileID: 1218163316}
-    - target: {fileID: 1493585714848782112, guid: 04f224b5c3a75a9ac8472a8993b41726,
-        type: 3}
-      propertyPath: preview
-      value: 
-      objectReference: {fileID: 1053229942}
-    - target: {fileID: 1493585714848782112, guid: 04f224b5c3a75a9ac8472a8993b41726,
-        type: 3}
-      propertyPath: maleAnimatorController
-      value: 
-      objectReference: {fileID: 9100000, guid: 1be52a0a3210c1e1db61b1e698336955, type: 2}
-    - target: {fileID: 1493585714848782112, guid: 04f224b5c3a75a9ac8472a8993b41726,
-        type: 3}
-      propertyPath: femaleAnmiController
-      value: 
-      objectReference: {fileID: 9100000, guid: ba3c605867b4fde1ebc66c886b063b79, type: 2}
-    - target: {fileID: 1493585714848782112, guid: 04f224b5c3a75a9ac8472a8993b41726,
-        type: 3}
-      propertyPath: maleSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: a637919e71701f7a9bed027cfc8e90b1,
-        type: 3}
-    - target: {fileID: 1493585714848782112, guid: 04f224b5c3a75a9ac8472a8993b41726,
-        type: 3}
-      propertyPath: femaleSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 9604f12090fecc006b72ed68c48426ea,
-        type: 3}
-    - target: {fileID: 1493585714848782112, guid: 04f224b5c3a75a9ac8472a8993b41726,
-        type: 3}
-      propertyPath: nameInputObj
-      value: 
-      objectReference: {fileID: 70922799}
-    - target: {fileID: 1493585714848782112, guid: 04f224b5c3a75a9ac8472a8993b41726,
-        type: 3}
-      propertyPath: genderInputObj
-      value: 
-      objectReference: {fileID: 1218163316}
-    - target: {fileID: 1493585714848782112, guid: 04f224b5c3a75a9ac8472a8993b41726,
-        type: 3}
-      propertyPath: preview
-      value: 
-      objectReference: {fileID: 1053229942}
-    - target: {fileID: 1493585714848782112, guid: 04f224b5c3a75a9ac8472a8993b41726,
-        type: 3}
-      propertyPath: maleAnimatorController
-      value: 
-      objectReference: {fileID: 9100000, guid: 1be52a0a3210c1e1db61b1e698336955, type: 2}
-    - target: {fileID: 1493585714848782112, guid: 04f224b5c3a75a9ac8472a8993b41726,
-        type: 3}
-      propertyPath: femaleAnmiController
-      value: 
-      objectReference: {fileID: 9100000, guid: ba3c605867b4fde1ebc66c886b063b79, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04f224b5c3a75a9ac8472a8993b41726, type: 3}

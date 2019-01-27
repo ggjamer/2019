@@ -45,7 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actorType: 0
-  OutdoorPosition: {x: 0, y: 0, z: 0}
+  currentDialogue: {fileID: 0}
+  activationDistance: 5
 --- !u!212 &145517052983055462
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -91,6 +92,6 @@ SpriteRenderer:
   m_Size: {x: 10.8, y: 10.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0

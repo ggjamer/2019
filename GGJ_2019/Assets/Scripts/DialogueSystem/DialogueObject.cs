@@ -4,6 +4,8 @@
 public class DialogueObject : ScriptableObject {
 	public ActorTypes actorIdentifier;
 	public int index;
+	public bool fireIndex;
+	public bool fireState;
 	
 	public string PersonA;
 	public Sprite PersonAImage;

@@ -1,54 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6015838679703059975
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1212833343225309246}
-  - component: {fileID: 1437001120405647905}
-  m_Layer: 0
-  m_Name: DialogueSystem
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1212833343225309246
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6015838679703059975}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 8385750351886872703}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1437001120405647905
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6015838679703059975}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d90e73195c34ec48901f0d36767beb3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LeftCharacterImage: {fileID: 0}
-  RightCharacterImage: {fileID: 0}
-  TextCanvas: {fileID: 0}
-  SpeakerNameText: {fileID: 0}
-  DialogueText: {fileID: 0}
-  OpeningAnimationDuration: 1
 --- !u!1 &8317295099922660785
 GameObject:
   m_ObjectHideFlags: 0
@@ -76,8 +27,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1212833343225309246}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -111,7 +61,8 @@ MonoBehaviour:
   Location: 1
   CameraPosition: {x: 0, y: 0, z: 0}
   Zoom: 0
-  dialogueSystemObj: {fileID: 6015838679703059975}
+  dialogueSystemObj: {fileID: 6692980439571663925, guid: bc719d8607bdcee449549c41449b8a12,
+    type: 3}
   DialogueSystem: {fileID: 0}
   newInTownDialogues:
   - {fileID: 11400000, guid: 8951eedccbf14511baffb07fca883bb8, type: 2}
@@ -122,3 +73,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f3fba69a6819915c29ccf2145d08beb9, type: 2}
   - {fileID: 11400000, guid: b7176da327758995db887a2d47539958, type: 2}
   - {fileID: 11400000, guid: 6e6d8c931962a915095688e206664c26, type: 2}
+  scandalDialogues: []
+  mayorsPermissionDialogues: []
+  jailVisitDialogues: []
+  toughballTalkDialogues: []
+  coffeeBreakDialogues: []
+  finaleDialogues: []
+  dialogueIndex: 0
