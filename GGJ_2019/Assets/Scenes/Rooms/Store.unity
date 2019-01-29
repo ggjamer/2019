@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571343, b: 0.30692208, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028328, g: 0.22571322, b: 0.30692163, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -484,7 +484,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7.76
+  orthographic size: 8.168892
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -508,7 +508,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 890511009}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.026646, y: -0.99531, z: -1.3315}
+  m_LocalPosition: {x: -0.15, y: -0.99531, z: -1.3315}
   m_LocalScale: {x: 0.6669362, y: 0.6669362, z: 0.6669362}
   m_Children: []
   m_Father: {fileID: 0}
@@ -767,7 +767,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -10.885447, y: -6.510764}
+  m_Offset: {x: -10.885447, y: -6.9519796}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -778,7 +778,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 16.629108, y: 3.2407398}
+  m_Size: {x: 16.629108, y: 2.3583083}
   m_EdgeRadius: 0
 --- !u!212 &2080358610
 SpriteRenderer:
@@ -836,7 +836,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2080358608}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.9007, y: -2.2424, z: -0.66455}
+  m_LocalPosition: {x: -1.9007, y: -2.2424, z: 0}
   m_LocalScale: {x: 0.6669362, y: 0.6669362, z: 0.6669362}
   m_Children:
   - {fileID: 422838931}
