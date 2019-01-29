@@ -46,6 +46,9 @@ public class DialogueSystem : MonoBehaviour
 				StartCoroutine(TransparentSprite());
 			}
 			Debug.Log("ending dialogue");
+			if (GameObject.Find("ReturnToMap") != null)
+				GameObject.Find("ReturnToMap").GetComponent<ReturnToMap>().inDialogue = false;
+
 
 			TextCanvas.DOFade(0, OpeningAnimationDuration);
 
@@ -86,6 +89,9 @@ public class DialogueSystem : MonoBehaviour
 	//public void StartDialogue(string characterA, string characterB, string[] dialogue)
 	public void StartDialogue(DialogueObject diag)
 	{
+		if (GameObject.Find("ReturnToMap") != null)
+			GameObject.Find("ReturnToMap").GetComponent<ReturnToMap>().inDialogue = true;
+
 		Debug.Log("Starting dialogue");
 		finished = false;
 		_do = diag;

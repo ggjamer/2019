@@ -7,6 +7,7 @@ public class ReturnToMap : MonoBehaviour
 {
 
 	private string _mapName;
+	public bool inDialogue = false;
 
     // Start is called before the first frame update
     void Start()
@@ -17,7 +18,7 @@ public class ReturnToMap : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButton("Cancel"))
+        if(Input.GetButton("Cancel") && !inDialogue)
 		{
 			GameLogic.Instance.Location = Locations.OUTSIDE;
 			SceneManager.LoadScene(_mapName);
