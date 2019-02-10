@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3110bbe428af79940b9b2041390d6eca, type: 3}
-  m_Name: innkeeper_03
+  m_Name: _innkeeper-03
   m_EditorClassIdentifier: 
   actorIdentifier: 11
   index: 3
