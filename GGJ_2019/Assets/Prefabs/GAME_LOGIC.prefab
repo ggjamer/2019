@@ -50,7 +50,7 @@ MonoBehaviour:
   playerName: 
   playerSprite: {fileID: 0}
   animatorController: {fileID: 0}
-  PlayerPosition: {x: 0, y: 0, z: 0}
+  PlayerPosition: {x: -20, y: -15, z: 0}
   GameState: 0
   StateInfos:
   - {fileID: 11400000, guid: faa45157dac4a500cbe54e1743d196ca, type: 2}
