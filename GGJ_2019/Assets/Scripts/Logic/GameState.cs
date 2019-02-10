@@ -10,6 +10,7 @@ public enum GameState
     JAIL_VISIT,
     TOUGHBALL_TALK,
     COFFEE_BREAK,
+    APOLOGIZE,
     FINALE
 }
 

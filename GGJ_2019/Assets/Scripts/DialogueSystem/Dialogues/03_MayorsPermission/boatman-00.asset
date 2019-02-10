@@ -21,5 +21,6 @@ MonoBehaviour:
   PersonB: You
   PersonBImage: {fileID: 0}
   diaglogue:
-  - I tell ya, I'm so done with this town. When I get outta here, I move straight
-    to Stonebridge.
+  - 'It''s so boring in here... Can we play rock, paper, scissors? '
+  - I'm actually kinda busy right now....
+  - Okay, okay, I get it....

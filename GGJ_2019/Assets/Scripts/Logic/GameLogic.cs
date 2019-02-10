@@ -49,7 +49,9 @@ public class GameLogic : MonoBehaviour {
     public DialogueObject[] jailVisitDialogues;
     public DialogueObject[] toughballTalkDialogues;
     public DialogueObject[] coffeeBreakDialogues;
+    public DialogueObject[] apologizeDialogues;
     public DialogueObject[] finaleDialogues;
+    private DialogueObject[] sceneDialogues;
     public int dialogueIndex;
     public bool dialogueActive;
     
@@ -77,43 +79,13 @@ public class GameLogic : MonoBehaviour {
                 keys.SetActive(false);
             }
         }
+
+        sceneDialogues = newInTownDialogues;
         ActualizeDialogues();
     }
 
     public DialogueObject GetCurrentDialogue(ActorTypes id, int idx) {
-        DialogueObject[] array = newInTownDialogues; 
-        switch (GameState) {
-            case GameState.NEW_IN_TOWN: {
-                array = newInTownDialogues;
-                break;
-            }
-            case GameState.SCANDAL: {
-                array = scandalDialogues;
-                break;
-            }
-            case GameState.MAYORS_PERMISSION: {
-                array = mayorsPermissionDialogues;
-                break;
-            }
-            case GameState.JAIL_VISIT: {
-                array = jailVisitDialogues;
-                break;
-            }
-            case GameState.TOUGHBALL_TALK: {
-                array = toughballTalkDialogues;
-                break;
-            }
-            case GameState.COFFEE_BREAK: {
-                array = coffeeBreakDialogues;
-                break;
-            }
-            case GameState.FINALE: {
-                array = finaleDialogues;
-                break;
-            }
-        }
-
-        return Array.Find<DialogueObject>(array, d => d.actorIdentifier == id && (d.index == 0 || d.index == idx));
+        return Array.Find<DialogueObject>(sceneDialogues, d => d.actorIdentifier == id && (d.index == 0 || d.index == idx));
     }
 
     public void NextGameState() {
@@ -121,14 +93,17 @@ public class GameLogic : MonoBehaviour {
         switch (GameState) {
             case GameState.NEW_IN_TOWN: {
                 GameState = GameState.SCANDAL;
+                sceneDialogues = scandalDialogues;
                 break;
             }
             case GameState.SCANDAL: {
                 GameState = GameState.MAYORS_PERMISSION;
+                sceneDialogues = mayorsPermissionDialogues;
                 break;
             }
             case GameState.MAYORS_PERMISSION: {
                 GameState = GameState.JAIL_VISIT;
+                sceneDialogues = jailVisitDialogues;
                 break;
             }
             case GameState.JAIL_VISIT: {
@@ -138,18 +113,22 @@ public class GameLogic : MonoBehaviour {
                     keys.SetActive(false);
                 }
                 GameState = GameState.TOUGHBALL_TALK;
+                sceneDialogues = toughballTalkDialogues;
                 break;
             }
             case GameState.TOUGHBALL_TALK: {
                 GameState = GameState.COFFEE_BREAK;
+                sceneDialogues = coffeeBreakDialogues;
                 break;
             }
             case GameState.COFFEE_BREAK: {
-                GameState = GameState.FINALE;
+                GameState = GameState.APOLOGIZE;
+                sceneDialogues = apologizeDialogues;
                 break;
             }
             case GameState.FINALE: {
-                return;
+                sceneDialogues = finaleDialogues;
+                break;
             }
         }
         dialogueIndex = 1;
@@ -166,5 +145,14 @@ public class GameLogic : MonoBehaviour {
             NPC npcBehaviour = npc.GetComponent<NPC>();
             npcBehaviour.currentDialogue = GetCurrentDialogue(npcBehaviour.actorType,  dialogueIndex);
         }
+    }
+
+    public bool AllDialoguesSeen() {
+        foreach(DialogueObject dialogue in sceneDialogues) {
+            if (!dialogue.seen) {
+                return false;
+            }
+        }
+        return true;
     }
 }

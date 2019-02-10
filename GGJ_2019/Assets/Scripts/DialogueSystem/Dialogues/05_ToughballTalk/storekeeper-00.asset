@@ -21,6 +21,6 @@ MonoBehaviour:
   PersonB: You
   PersonBImage: {fileID: 0}
   diaglogue:
-  - "What? You want to know about my relation to the priest? How could you ask me
-    such a thing? That\u2019s none of your business! If only my daddy would know how
-    rude people get towards me."
+  - I told you everything I have to say. if you don't wanna buy something, please
+    leave me alone. If only my daddy...
+  - '...would know how I treat you. Yeah, I got that.'

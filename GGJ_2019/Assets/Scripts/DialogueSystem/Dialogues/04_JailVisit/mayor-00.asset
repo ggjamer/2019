@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3110bbe428af79940b9b2041390d6eca, type: 3}
-  m_Name: mayor
+  m_Name: mayor-00
   m_EditorClassIdentifier: 
   actorIdentifier: 6
   index: 0

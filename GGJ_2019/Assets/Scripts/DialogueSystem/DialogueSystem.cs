@@ -66,7 +66,7 @@ public class DialogueSystem : MonoBehaviour
 			{
 				GameLogic.Instance.NextGameState();
 			}
-
+			_do.seen = true;
 			_do = null;
 			_dialogue = null;
 			finished = true;
@@ -108,7 +108,6 @@ public class DialogueSystem : MonoBehaviour
 		_currentLine = 0;
 		_characterASpeaking = true;
 		PlayNextLine();
-
 
 	}
 

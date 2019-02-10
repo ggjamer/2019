@@ -16,13 +16,9 @@ MonoBehaviour:
   index: 0
   fireIndex: 0
   fireState: 0
-  PersonA: You
-  PersonAImage: {fileID: 0}
-  PersonB: Barkeeper
-  PersonBImage: {fileID: 21300000, guid: 354ab5a5798315569acbd2d9ef16883d, type: 3}
+  PersonA: Barkeeper
+  PersonAImage: {fileID: 21300000, guid: 354ab5a5798315569acbd2d9ef16883d, type: 3}
+  PersonB: You
+  PersonBImage: {fileID: 0}
   diaglogue:
-  - Hi, I'm new here.
-  - "A new face. Nice to meet you. Sorry that everyone is so down right now. Maybe
-    you should talk to my wife\x1A\x1A at the inn. She\u2019s always up for a chat,
-    even in times like this."
-  - Okay, bye.
+  - I can't tell ya how grateful I'm that you're doing this. You're a cool cat.

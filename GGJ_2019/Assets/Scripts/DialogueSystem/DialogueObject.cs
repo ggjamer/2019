@@ -6,6 +6,7 @@ public class DialogueObject : ScriptableObject {
 	public int index;
 	public bool fireIndex;
 	public bool fireState;
+	public bool seen;
 	
 	public string PersonA;
 	public Sprite PersonAImage;

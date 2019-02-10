@@ -15,6 +15,7 @@ public class FinalScene : MonoBehaviour {
     private int idx = 0;
     // Start is called before the first frame update
     void Start() {
+        GameLogic.Instance.ActualizeDialogues();
         dsObj = Instantiate(dialogueSystem);
         system = dsObj.GetComponent<DialogueSystem>();
         system.finished = true;
