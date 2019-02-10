@@ -21,10 +21,10 @@ MonoBehaviour:
   PersonB: You
   PersonBImage: {fileID: 0}
   diaglogue:
-  - ' Hi. How can I help you?'
+  - "Hi. How can I help you?"
   - Do you have some flour?
   - "Sure. My daddy used to sail up to Stonebridge to provide the finest flour. Now
-    my\u2026 boyfriend\u2019s in charge for it, but he always gets the cheap flour,
+    my\u2026 boyfriend\u2019s in charge of it, but he always gets the cheap flour,
     which is just not that great and\u2026 sorry, I\u2019m blabbering. Do you need
     anything else?"
   - No, thank you.

@@ -21,18 +21,18 @@ MonoBehaviour:
   PersonB: You
   PersonBImage: {fileID: 0}
   diaglogue:
-  - Oh, your done cleaning. Great work. And, man thank you so much
-  - Your welcome. Who's that weird drunk guy?
+  - Oh, you are done cleaning. Great work. And, man thank you so much
+  - You are welcome. Who's that weird drunk guy?
   - 'That one? Boy, I have no idea. He sits here every day and is responsible for
-    half of my incomings, haha. '
+    half of my income, haha. '
   - I see...
   - Don't worry about him. He's just an old guy blabbering drunken nonsense. Even
     though he's right sometimes.
   - What do you mean?
   - I don't know. I heard him complaining about the ungratefulness of the villagers.
   - And he is right about it?
-  - Sort of. Take the mayor for example. He send the boatman to prison, just like
-    that. after all he's done for the village.
+  - Sort of. Take the mayor for example. He sent the boatman to prison, just like
+    that. After all he's done for the village.
   - The boatsman is the storekeeper's boyfriend?
   - Right, you heard about the story. Yes he is. Poor guy.
   - What made the mayor send him to prison?
